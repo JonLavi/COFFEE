@@ -5,7 +5,7 @@ require_relative('../product')
 class ProductTest < MiniTest::Test
 
   def setup
-    options = {name:"Colombian Supremo", producer_id:1, origin:"Colombia", roast:"Dark", blend: "Pure Arabica"}
+    options = {name:"Colombian Supremo", producer_id:1, origin:"Colombia", roast:"Dark", blend: "Pure Arabica", grind: "fine"}
     @product1 = Product.new(options)
   end
 
@@ -27,6 +27,10 @@ class ProductTest < MiniTest::Test
 
   def test_product_blend
     assert_equal("Pure Arabica", @product1.blend)
+  end
+
+  def test_product_grind
+    assert_equal("fine", @product1.grind)
   end
 
 end
