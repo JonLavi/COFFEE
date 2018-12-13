@@ -1,9 +1,10 @@
 class Producer
 
-  attr_reader :name
+  attr_reader :name, :address
 
-  def initialize(name)
+  def initialize(name,address)
     @name=name
+    @address=address
   end
 
 end
