@@ -5,7 +5,7 @@ require_relative('../producer')
 class ProducerTest < MiniTest::Test
 
   def setup()
-    options1 = {:name => "YummyCoffeeCo", :address => "123 Fake Street", :products => []}
+    options1 = {name: "YummyCoffeeCo", address: "123 Fake Street", products: []}
     @producer1 = Producer.new(options1)
   end
 
