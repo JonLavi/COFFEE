@@ -12,7 +12,7 @@ class ProductTest < MiniTest::Test
                blend:"Arabica",
                type: "Whole Bean",
                weight: 500,
-               price: 5,
+               unit_cost: 5,
              }
     @product1 = Product.new(options)
   end
@@ -45,8 +45,8 @@ class ProductTest < MiniTest::Test
     assert_equal(500, @product1.weight)
   end
 
-  def test_product_price
-    assert_equal(5, @product1.price)
+  def test_product_unit_cost
+    assert_equal(5, @product1.unit_cost)
   end
 
 end
