@@ -3,6 +3,7 @@ class StockItem
   attr_reader :product_id, :product_name, :units_in_stock, :optimal_stock
 
   def initialize(options)
+    @id = options[:id] if options[:id]
     @product_id = options[:product_id] #integer
     @product_name = options[:product_name] #string
     @units_in_stock = options[:units_in_stock] #integer
@@ -19,6 +20,20 @@ class StockItem
 
   def profit
     #SQL query for products.markup multiplied by product_id
+  end
+
+  def save()
+    sql = "INSERT INTO stock_items
+    (product_id, product_name, units_in_stock, optimal_stock, stock_buy_value, stock_sell_value, profit)
+    values ($1,$2,$3,$4,$5,$6,$7) RETURNING id"
+    values = [@product_id, @product_name, @units_in_stock, @optimal_stock, @stock_buy_value, @stock_sell_value, @profit]
+    result = SqlRunner.run(sql, values)
+    @id = result[0][:id].to_i
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM stock_items"
+    SqlRunner.run(sql)
   end
 
 end

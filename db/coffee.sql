@@ -29,7 +29,7 @@ CREATE TABLE stock_items
 (
   id SERIAL8 PRIMARY KEY,
   product_id INT8 REFERENCES products(id) ON DELETE CASCADE,
-  product_name INT8,
+  product_name VARCHAR(255),
   units_in_stock INT8,
   optimal_stock INT8,
   stock_buy_value INT8,

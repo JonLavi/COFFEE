@@ -1,6 +1,6 @@
 class Product
 
-  attr_reader :name, :producer_id, :origin, :roast, :blend, :type, :weight, :unit_cost, :sell_price
+  attr_reader :id, :name, :producer_id, :origin, :roast, :blend, :type, :weight, :unit_cost, :sell_price
 
   def initialize(options)
     @name = options[:name] #string
@@ -28,11 +28,14 @@ class Product
     values
     ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
     RETURNING id"
-    markup()
-    markup_percentage()
-    values = [@name, @producer_id, @origin, @roast, @blend, @type, @weight, @unit_cost, @sell_price, @markup, @markup_percentage]
+    values = [@name, @producer_id, @origin, @roast, @blend, @type, @weight, @unit_cost, @sell_price, markup(), markup_percentage()]
     result = SqlRunner.run(sql, values)
-    @id = result[0][:id].to_i
+    @id = result[0]['id'].to_i
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM products"
+    SqlRunner.run(sql)
   end
 
 end
