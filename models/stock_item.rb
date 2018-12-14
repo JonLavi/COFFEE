@@ -30,7 +30,12 @@ class StockItem
   #def update()
   #def self.find_by_id_(id)
   #def self.delete_by_id(id)
-  #def self.all()
+
+  def self.all()
+    sql = "SELECT * FROM stock_items"
+    results = SqlRunner.run(sql)
+    return results.map{|hash| StockItem.new(hash)}
+  end
 
   def stock_buy_value
     #SQL query for products.unit_cost on product_id, multiplied by @units_in_stock

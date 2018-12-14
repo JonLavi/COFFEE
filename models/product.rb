@@ -36,13 +36,14 @@ class Product
     @id = result[0]['id'].to_i
   end
 
+  #def producer
   #def update()
   #def self.find_by_id_(id)
   #def self.delete_by_id(id)
+
   def self.all()
     sql = "SELECT * FROM products"
     results = SqlRunner.run(sql)
-    binding.pry
     return results.map{|hash| Product.new(hash)}
   end
 
