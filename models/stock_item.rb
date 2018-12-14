@@ -15,8 +15,8 @@ class StockItem
 
   def save()
     sql = "INSERT INTO stock_items
-    (product_id, product_name, units_in_stock, optimal_stock, stock_buy_value, stock_sell_value, profit)
-    values ($1,$2,$3,$4,$5,$6,$7) RETURNING id"
+          (product_id, product_name, units_in_stock, optimal_stock, stock_buy_value, stock_sell_value, profit)
+          values ($1,$2,$3,$4,$5,$6,$7) RETURNING id"
     values = [@product_id, @product_name, @units_in_stock, @optimal_stock, @stock_buy_value, @stock_sell_value, @profit]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i

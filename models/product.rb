@@ -28,22 +28,21 @@ class Product
 
   def save()
     sql = "INSERT INTO products
-    (name, producer_id, origin, roast, blend, type, weight, unit_cost, sell_price, markup, markup_percentage)
-    values
-    ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
-    RETURNING id"
+          (name, producer_id, origin, roast, blend, type, weight, unit_cost, sell_price, markup, markup_percentage)
+          VALUES
+          ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+          RETURNING id"
     values = [@name, @producer_id, @origin, @roast, @blend, @type, @weight, @unit_cost, @sell_price, markup(), markup_percentage()]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
   end
 
   #def producer
-  #def update()
 
   def update()
     sql = "UPDATE products SET
-    (name, producer_id, origin, roast, blend, type, weight, unit_cost, sell_price, markup, markup_percentage) =
-    ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) WHERE id = $12"
+          (name, producer_id, origin, roast, blend, type, weight, unit_cost, sell_price, markup, markup_percentage) =
+          ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) WHERE id = $12"
     values = [@name, @producer_id, @origin, @roast, @blend, @type, @weight, @unit_cost, @sell_price, markup(), markup_percentage(), @id]
     SqlRunner.run(sql, values)
   end

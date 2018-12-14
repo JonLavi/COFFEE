@@ -53,13 +53,20 @@ stockitem2 = StockItem.new({'product_id' => product2.id,
 stockitem2.save()
 
 
+
+##### Tested Methods: #####
 # product1.name = "ColomboCoffee"
 # product1.blend = "Robusta"
 # product1.update()
 
-Producer.all()
-Product.all()
-StockItem.all()
+# producer1.name = "Hot Stuff Coffee"
+# producer1.address = "1 Elm Street"
+# producer1.update()
+
+
+# Producer.all()
+# Product.all()
+# StockItem.all()
 # Producer.find(22)
 # Product.find(22)
 # StockItem.find(7)

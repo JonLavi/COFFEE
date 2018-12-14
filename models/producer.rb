@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Producer
 
-  attr_reader :id, :name, :address
+  attr_reader :id
+  attr_accessor :name, :address
 
   def initialize(options)
     @id = options['id'] if options['id'] #integer
@@ -17,7 +18,11 @@ class Producer
     @id = results[0]['id'].to_i
   end
 
-  #def update()
+  def update()
+    sql = "UPDATE producers SET (name, address) = ($1, $2) WHERE id = $3"
+    values = [@name, @address, @id]
+    results = SqlRunner.run(sql, values)
+  end
 
   def delete()
     Producer.delete_by_id(@id)
