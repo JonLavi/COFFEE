@@ -3,14 +3,19 @@ require_relative('product')
 
 class StockItem
 
-  attr_reader :product_id, :product_name, :units_in_stock, :optimal_stock
+  attr_reader :ids
+  attr_accessor :product_id, :product_name, :units_in_stock, :optimal_stock
 
   def initialize(options)
     @id = options['id'] if options['id']
     @product_id = options['product_id'] #integer
-    @product_name = options['product_name'] #string
     @units_in_stock = options['units_in_stock'] #integer
     @optimal_stock = options['optimal_stock'] #integer
+  end
+
+  def product_name
+    product = Product.find(@product_id)
+    @product_name = product.name
   end
 
   def stock_buy_value
@@ -33,15 +38,17 @@ class StockItem
     sql = "INSERT INTO stock_items
           (product_id, product_name, units_in_stock, optimal_stock, stock_buy_value, stock_sell_value, profit)
           values ($1,$2,$3,$4,$5,$6,$7) RETURNING id"
-    values = [@product_id, @product_name, @units_in_stock, @optimal_stock, stock_buy_value(), stock_sell_value(), profit()]
+    values = [@product_id, product_name(), @units_in_stock, @optimal_stock, stock_buy_value(), stock_sell_value(), profit()]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
   end
 
   def update()
     sql = "UPDATE stock_items SET
-          (product_id, product_name, units_in_stock, optimal_stock) =
-          ($1) WHERE id = $"
+          (product_id, product_name, units_in_stock, optimal_stock, stock_buy_value, stock_sell_value, profit) =
+          ($1,$2,$3,$4,$5,$6,$7) WHERE id = $8"
+    values = [@product_id, product_name(), @units_in_stock, @optimal_stock, stock_buy_value(), stock_sell_value(), profit(), @id]
+    result = SqlRunner.run(sql, values)
   end
 
   def delete()

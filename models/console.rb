@@ -52,7 +52,7 @@ stockitem2 = StockItem.new({'product_id' => product2.id,
            'optimal_stock' => 30})
 stockitem2.save()
 
-stockitem1.stock_buy_value
+
 
 ##### Tested Methods: #####
 # product1.name = "ColomboCoffee"
@@ -63,6 +63,12 @@ stockitem1.stock_buy_value
 # producer1.address = "1 Elm Street"
 # producer1.update()
 
+#stockitem1.stock_buy_value()
+#stockitem1.stock_sell_value()
+#stockitem1.profit()
+stockitem1.product_id = (product2.id)
+stockitem1.units_in_stock = 50
+stockitem1.update()
 
 # Producer.all()
 # Product.all()
