@@ -38,14 +38,24 @@ class Product
 
   #def producer
   #def update()
-  #def self.find_by_id_(id)
+
   #def self.delete_by_id(id)
+
+  def delete()
+    Product.delete_by_id(@id)
+  end
 
   def self.find(id)
     sql = "SELECT * FROM products WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values)
     return Product.new(result[0])
+  end
+
+  def self.delete_by_id(id)
+    sql = "DELETE FROM products WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
   end
 
   def self.all()

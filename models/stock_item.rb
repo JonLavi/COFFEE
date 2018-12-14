@@ -22,27 +22,34 @@ class StockItem
     @id = result[0]['id'].to_i
   end
 
-  def self.delete_all()
-    sql = "DELETE FROM stock_items"
-    SqlRunner.run(sql)
-  end
-
   #def update()
-  #def self.find_by_id_(id)
-  #def self.delete_by_id(id)
 
+  def delete()
+    StockItem.delete_by_id(@id)
+  end
 
   def self.find(id)
     sql = "SELECT * FROM stock_items WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values)
-    return Producer.new(result[0])
+    return StockItem.new(result[0])
+  end
+
+  def self.delete_by_id(id)
+    sql = "DELETE FROM stock_items WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
   end
 
   def self.all()
     sql = "SELECT * FROM stock_items"
     results = SqlRunner.run(sql)
     return results.map{|hash| StockItem.new(hash)}
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM stock_items"
+    SqlRunner.run(sql)
   end
 
   def stock_buy_value
