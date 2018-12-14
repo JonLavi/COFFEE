@@ -1,4 +1,4 @@
-class ItemStock
+class StockItem
 
   attr_reader :product_id, :product_name, :units_in_stock, :optimal_stock
 

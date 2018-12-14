@@ -1,9 +1,9 @@
 require('minitest/autorun')
 require('minitest/rg')
-require_relative('../item_stock')
+require_relative('../stock_item')
 require_relative('../product')
 
-class ItemStockTest < MiniTest::Test
+class StockItemTest < MiniTest::Test
 
   def setup
     product1_options = {name:"Colombian Supremo",
@@ -22,23 +22,23 @@ class ItemStockTest < MiniTest::Test
                product_name: @product1.name,
                units_in_stock: 10,
                optimal_stock: 20}
-    @itemstock1 = ItemStock.new(options)
+    @stockitem1 = StockItem.new(options)
   end
 
-  def test_item_stock_product_id
-    assert_equal(1, @itemstock1.product_id)
+  def test_stock_item_product_id
+    assert_equal(1, @stockitem1.product_id)
   end
 
-  def test_item_stock_product_name
-    assert_equal("Colombian Supremo", @itemstock1.product_name)
+  def test_stock_item_product_name
+    assert_equal("Colombian Supremo", @stockitem1.product_name)
   end
 
-  def test_item_stock_units_in_stock
-    assert_equal(10, @itemstock1.units_in_stock)
+  def test_stock_item_units_in_stock
+    assert_equal(10, @stockitem1.units_in_stock)
   end
 
-  def test_item_stock_optimal_stock
-    assert_equal(20, @itemstock1.optimal_stock)
+  def test_stock_item_optimal_stock
+    assert_equal(20, @stockitem1.optimal_stock)
   end
 
 end
