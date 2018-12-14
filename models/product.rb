@@ -19,6 +19,10 @@ class Product
     @sell_price = options['sell_price'].to_i #integer
   end
 
+  def producer
+    return producer.find(@producer.id).name
+  end
+
   def markup
     @markup = @sell_price-@unit_cost
   end
@@ -26,11 +30,6 @@ class Product
   def markup_percentage
     @markup_percentage = markup()/@unit_cost.to_f
   end
-
-  def producer
-    return producer.find(@producer.id).name
-  end
-
 
 #### SQL CRUD Actions ####
 
