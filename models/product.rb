@@ -1,6 +1,6 @@
 class Product
 
-  attr_reader :name, :producer_id, :origin, :roast, :blend, :type, :weight, :unit_cost
+  attr_reader :name, :producer_id, :origin, :roast, :blend, :type, :weight, :unit_cost, :sell_price
 
   def initialize(options)
     @name = options[:name] #string
@@ -11,6 +11,15 @@ class Product
     @type = options[:type] #string
     @weight = options[:weight] #integer
     @unit_cost = options[:unit_cost] #integer
+    @sell_price = options[:sell_price] #integer
+  end
+
+  def markup
+    @markup = @sell_price-@unit_cost
+  end
+
+  def markup_percentage
+    @markup_percentage = markup()/@unit_cost.to_f
   end
 
 end

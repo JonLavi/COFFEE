@@ -13,6 +13,7 @@ class ProductTest < MiniTest::Test
                type: "Whole Bean",
                weight: 500,
                unit_cost: 5,
+               sell_price: 6,
              }
     @product1 = Product.new(options)
   end
@@ -47,6 +48,18 @@ class ProductTest < MiniTest::Test
 
   def test_product_unit_cost
     assert_equal(5, @product1.unit_cost)
+  end
+
+  def test_product_sell_price
+    assert_equal(6, @product1.sell_price)
+  end
+
+  def test_product_markup
+    assert_equal(1, @product1.markup)
+  end
+
+  def test_product_markup_percentage
+    assert_equal(0.2, @product1.markup_percentage)
   end
 
 end
