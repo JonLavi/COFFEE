@@ -22,4 +22,17 @@ class Product
     @markup_percentage = markup()/@unit_cost.to_f
   end
 
+  def save()
+    sql = "INSERT INTO products
+    (name, producer_id, origin, roast, blend, type, weight, unit_cost, sell_price, markup, markup_percentage)
+    values
+    ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+    RETURNING id"
+    markup()
+    markup_percentage()
+    values = [@name, @producer_id, @origin, @roast, @blend, @type, @weight, @unit_cost, @sell_price, @markup, @markup_percentage]
+    result = SqlRunner.run(sql, values)
+    @id = result[0][:id].to_i
+  end
+
 end

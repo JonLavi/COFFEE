@@ -21,8 +21,8 @@ CREATE TABLE products
   weight INT8,
   unit_cost INT8,
   sell_price INT8,
-  markup INT8,
-  markup_percentage INT8
+  markup real,
+  markup_percentage real
 );
 
 CREATE TABLE stock_items
@@ -34,5 +34,5 @@ CREATE TABLE stock_items
   optimal_stock INT8,
   stock_buy_value INT8,
   stock_sell_value INT8,
-  profit INT8
+  profit real
 )
