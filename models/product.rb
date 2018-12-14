@@ -3,7 +3,8 @@ require_relative('producer')
 
 class Product
 
-  attr_reader :id, :name, :producer_id, :origin, :roast, :blend, :type, :weight, :unit_cost, :sell_price
+  attr_reader :id
+  attr_accessor :name, :producer_id, :origin, :roast, :blend, :type, :weight, :unit_cost, :sell_price
 
   def initialize(options)
     @name = options['name'] #string
@@ -39,7 +40,13 @@ class Product
   #def producer
   #def update()
 
-  #def self.delete_by_id(id)
+  def update()
+    sql = "UPDATE products SET
+    (name, producer_id, origin, roast, blend, type, weight, unit_cost, sell_price, markup, markup_percentage) =
+    ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) WHERE id = $12"
+    values = [@name, @producer_id, @origin, @roast, @blend, @type, @weight, @unit_cost, @sell_price, markup(), markup_percentage(), @id]
+    SqlRunner.run(sql, values)
+  end
 
   def delete()
     Product.delete_by_id(@id)

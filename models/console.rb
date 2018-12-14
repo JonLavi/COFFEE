@@ -53,10 +53,9 @@ stockitem2 = StockItem.new({'product_id' => product2.id,
 stockitem2.save()
 
 
-
-
-
-
+# product1.name = "ColomboCoffee"
+# product1.blend = "Robusta"
+# product1.update()
 
 Producer.all()
 Product.all()

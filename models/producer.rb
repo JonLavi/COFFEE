@@ -19,8 +19,6 @@ class Producer
 
   #def update()
 
-  #def self.delete_by_id(id)
-
   def delete()
     Producer.delete_by_id(@id)
   end
