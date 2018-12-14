@@ -11,6 +11,8 @@ class Producer
     @address = options['address'] #string
   end
 
+#### SQL CRUD Actions ####
+
   def save()
     sql = "INSERT INTO producers (name, address) values ($1, $2) RETURNING id"
     values = [@name, @address]

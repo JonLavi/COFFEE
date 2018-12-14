@@ -13,9 +13,9 @@ class Product
     @roast = options['roast'] #string
     @blend = options['blend'] #string
     @type = options['type'] #string
-    @weight = options['weight'] #integer
-    @unit_cost = options['unit_cost'] #integer
-    @sell_price = options['sell_price'] #integer
+    @weight = options['weight'].to_i #integer
+    @unit_cost = options['unit_cost'].to_i #integer
+    @sell_price = options['sell_price'].to_i #integer
   end
 
   def markup
@@ -25,6 +25,11 @@ class Product
   def markup_percentage
     @markup_percentage = markup()/@unit_cost.to_f
   end
+
+  #def producer
+
+
+#### SQL CRUD Actions ####
 
   def save()
     sql = "INSERT INTO products
@@ -36,8 +41,6 @@ class Product
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
   end
-
-  #def producer
 
   def update()
     sql = "UPDATE products SET

@@ -52,7 +52,7 @@ stockitem2 = StockItem.new({'product_id' => product2.id,
            'optimal_stock' => 30})
 stockitem2.save()
 
-
+stockitem1.stock_buy_value
 
 ##### Tested Methods: #####
 # product1.name = "ColomboCoffee"
