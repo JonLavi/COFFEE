@@ -5,7 +5,15 @@ require_relative('../product')
 class ProductTest < MiniTest::Test
 
   def setup
-    options = {name:"Colombian Supremo", producer_id:1, origin:"Colombia", roast:"Dark", blend:"Arabica", type: "Whole Bean", weight: 500}
+    options = {name:"Colombian Supremo",
+               producer_id:1,
+               origin:"Colombia",
+               roast:"Dark",
+               blend:"Arabica",
+               type: "Whole Bean",
+               weight: 500,
+               price: 5,
+             }
     @product1 = Product.new(options)
   end
 
@@ -35,6 +43,10 @@ class ProductTest < MiniTest::Test
 
   def test_product_weight
     assert_equal(500, @product1.weight)
+  end
+
+  def test_product_price
+    assert_equal(5, @product1.price)
   end
 
 end

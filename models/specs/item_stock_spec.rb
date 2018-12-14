@@ -1,11 +1,14 @@
 require('minitest/autorun')
 require('minitest/rg')
 require_relative('../item_stock')
+require_relative('../product')
 
 class ItemStockTest < MiniTest::Test
 
   def setup
-    options = {product_id: 1, product_name: "Colombian Supremo", units_in_stock: 10, optimal_stock: 20}
+    product_options = {name:"Colombian Supremo", producer_id:1, origin:"Colombia", roast:"Dark", blend:"Arabica", type: "Whole Bean", weight: 500}
+    @product1 = Product.new(product_options)
+    options = {product_id: 1, product_name: @product1.name, units_in_stock: 10, optimal_stock: 20}
     @itemstock1 = ItemStock.new(options)
   end
 

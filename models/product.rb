@@ -1,6 +1,6 @@
 class Product
 
-  attr_reader :name, :producer_id, :origin, :roast, :blend, :type, :weight
+  attr_reader :name, :producer_id, :origin, :roast, :blend, :type, :weight, :price
 
   def initialize(options)
     @name = options[:name] #string
@@ -10,6 +10,7 @@ class Product
     @blend = options[:blend] #string
     @type = options[:type] #string
     @weight = options[:weight] #integer
+    @price = options[:price] #integer
   end
 
 end
