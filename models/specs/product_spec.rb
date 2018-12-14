@@ -5,21 +5,21 @@ require_relative('../product')
 class ProductTest < MiniTest::Test
 
   def setup
-    options = {name:"Colombian Supremo",
-               producer_id:1,
-               origin:"Colombia",
-               roast:"Dark",
-               blend:"Arabica",
-               type: "Whole Bean",
-               weight: 500,
-               unit_cost: 5,
-               sell_price: 6,
+    options = {'name' => 'Colombian Supremo',
+               'producer_id' => 1,
+               'origin' => 'Colombia',
+               'roast' => 'Dark',
+               'blend' => 'Arabica',
+               'type' => 'Whole Bean',
+               'weight' => 500,
+               'unit_cost' => 5,
+               'sell_price' => 6,
              }
     @product1 = Product.new(options)
   end
 
   def test_product_name
-    assert_equal("Colombian Supremo",@product1.name)
+    assert_equal('Colombian Supremo',@product1.name)
   end
 
   def test_product_producer_id
@@ -27,19 +27,19 @@ class ProductTest < MiniTest::Test
   end
 
   def test_product_origin
-    assert_equal("Colombia", @product1.origin)
+    assert_equal('Colombia', @product1.origin)
   end
 
   def test_product_roast
-    assert_equal("Dark", @product1.roast)
+    assert_equal('Dark', @product1.roast)
   end
 
   def test_product_blend
-    assert_equal("Arabica", @product1.blend)
+    assert_equal('Arabica', @product1.blend)
   end
 
   def test_product_type
-    assert_equal("Whole Bean", @product1.type)
+    assert_equal('Whole Bean', @product1.type)
   end
 
   def test_product_weight

@@ -6,22 +6,22 @@ require_relative('../product')
 class StockItemTest < MiniTest::Test
 
   def setup
-    product1_options = {name:"Colombian Supremo",
-               producer_id:1,
-               origin:"Colombia",
-               roast:"Dark",
-               blend:"Arabica",
-               type: "Whole Bean",
-               weight: 500,
-               unit_cost: 5,
-               sell_price: 6,
+    product1_options = {'name' => 'Colombian Supremo',
+               'producer_id' => 1,
+               'origin' => 'Colombia',
+               'roast' => 'Dark',
+               'blend' => 'Arabica',
+               'type' => 'Whole Bean',
+               'weight' => 500,
+               'unit_cost' => 5,
+               'sell_price' => 6,
              }
     @product1 = Product.new(product1_options)
 
-    options = {product_id: 1,
-               product_name: @product1.name,
-               units_in_stock: 10,
-               optimal_stock: 20}
+    options = {'product_id' => 1,
+               'product_name' => @product1.name,
+               'units_in_stock' => 10,
+               'optimal_stock' => 20}
     @stockitem1 = StockItem.new(options)
   end
 
@@ -30,7 +30,7 @@ class StockItemTest < MiniTest::Test
   end
 
   def test_stock_item_product_name
-    assert_equal("Colombian Supremo", @stockitem1.product_name)
+    assert_equal('Colombian Supremo', @stockitem1.product_name)
   end
 
   def test_stock_item_units_in_stock

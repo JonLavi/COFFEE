@@ -5,9 +5,9 @@ class Producer
   attr_reader :id, :name, :address
 
   def initialize(options)
-    @id = options[:id] if options[:id] #integer
-    @name = options[:name] #string
-    @address = options[:address] #string
+    @id = options['id'] if options['id'] #integer
+    @name = options['name'] #string
+    @address = options['address'] #string
   end
 
   def save()
@@ -15,6 +15,16 @@ class Producer
     values = [@name, @address]
     results = SqlRunner.run(sql, values)
     @id = results[0]['id'].to_i
+  end
+
+  #def update()
+  #def self.find_by_id_(id)
+  #def self.delete_by_id(id)
+
+  def self.all()
+    sql = "SELECT * FROM producers"
+    results = SqlRunner.run(sql)
+    return results.map{|hash| Producer.new(hash)}
   end
 
   def self.delete_all()

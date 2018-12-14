@@ -1,17 +1,20 @@
+require_relative('../db/sql_runner')
+require_relative('producer')
+
 class Product
 
   attr_reader :id, :name, :producer_id, :origin, :roast, :blend, :type, :weight, :unit_cost, :sell_price
 
   def initialize(options)
-    @name = options[:name] #string
-    @producer_id = options[:producer_id].to_i #integer
-    @origin = options[:origin] #string
-    @roast = options[:roast] #string
-    @blend = options[:blend] #string
-    @type = options[:type] #string
-    @weight = options[:weight] #integer
-    @unit_cost = options[:unit_cost] #integer
-    @sell_price = options[:sell_price] #integer
+    @name = options['name'] #string
+    @producer_id = options['producer_id'].to_i #integer
+    @origin = options['origin'] #string
+    @roast = options['roast'] #string
+    @blend = options['blend'] #string
+    @type = options['type'] #string
+    @weight = options['weight'] #integer
+    @unit_cost = options['unit_cost'] #integer
+    @sell_price = options['sell_price'] #integer
   end
 
   def markup
@@ -31,6 +34,16 @@ class Product
     values = [@name, @producer_id, @origin, @roast, @blend, @type, @weight, @unit_cost, @sell_price, markup(), markup_percentage()]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
+  end
+
+  #def update()
+  #def self.find_by_id_(id)
+  #def self.delete_by_id(id)
+  def self.all()
+    sql = "SELECT * FROM products"
+    results = SqlRunner.run(sql)
+    binding.pry
+    return results.map{|hash| Product.new(hash)}
   end
 
   def self.delete_all()
