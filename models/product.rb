@@ -7,6 +7,7 @@ class Product
   attr_accessor :name, :producer_id, :origin, :roast, :blend, :type, :weight, :unit_cost, :sell_price
 
   def initialize(options)
+    @id = options['id'] if options['id'] #integer
     @name = options['name'] #string
     @producer_id = options['producer_id'].to_i #integer
     @origin = options['origin'] #string
@@ -26,7 +27,9 @@ class Product
     @markup_percentage = markup()/@unit_cost.to_f
   end
 
-  #def producer
+  def producer
+    return producer.find(@producer.id).name
+  end
 
 
 #### SQL CRUD Actions ####

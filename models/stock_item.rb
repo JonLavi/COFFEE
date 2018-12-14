@@ -7,10 +7,10 @@ class StockItem
   attr_accessor :product_id, :product_name, :units_in_stock, :optimal_stock
 
   def initialize(options)
-    @id = options['id'] if options['id']
-    @product_id = options['product_id'] #integer
-    @units_in_stock = options['units_in_stock'] #integer
-    @optimal_stock = options['optimal_stock'] #integer
+    @id = options['id'] if options['id'] #integer
+    @product_id = options['product_id'].to_i #integer
+    @units_in_stock = options['units_in_stock'].to_i #integer
+    @optimal_stock = options['optimal_stock'].to_i #integer
   end
 
   def product_name
