@@ -5,7 +5,7 @@ require_relative('../item_stock')
 class ItemStockTest < MiniTest::Test
 
   def setup
-    options = {product_id: 1, product_name: "Colombian Supremo", units_in_stock: 10}
+    options = {product_id: 1, product_name: "Colombian Supremo", units_in_stock: 10, optimal_stock: 20}
     @itemstock1 = ItemStock.new(options)
   end
 
@@ -19,6 +19,10 @@ class ItemStockTest < MiniTest::Test
 
   def test_item_stock_units_in_stock
     assert_equal(10, @itemstock1.units_in_stock)
+  end
+
+  def test_item_stock_optimal_stock
+    assert_equal(20, @itemstock1.optimal_stock)
   end
 
 end
