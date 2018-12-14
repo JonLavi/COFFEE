@@ -9,4 +9,16 @@ class ItemStock
     @optimal_stock = options[:optimal_stock] #integer
   end
 
+  def stock_buy_value
+    #SQL query for products.unit_cost on product_id, multiplied by @units_in_stock
+  end
+
+  def stock_sell_value
+    #SQL query for products.sell_price on product_id, multiplied by @units_in_stock
+  end
+
+  def profit
+    #SQL query for products.markup multiplied by product_id
+  end
+
 end
