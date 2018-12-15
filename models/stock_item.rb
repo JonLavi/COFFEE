@@ -18,6 +18,12 @@ class StockItem
     @product_name = product.name
   end
 
+  def producer_name
+    product = Product.find(@product_id)
+    producer = Producer.find(product.producer_id)
+    @producer_name = producer.name
+  end
+
   def stock_buy_value
     product = Product.find(@product_id)
     @stock_buy_value = @units_in_stock * product.unit_cost

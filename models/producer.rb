@@ -32,14 +32,14 @@ class Producer
 
   def self.find(id)
     sql = "SELECT * FROM producers WHERE id = $1"
-    values = [id]
+    values = [id.to_i]
     result = SqlRunner.run(sql, values)
     return Producer.new(result[0])
   end
 
   def self.delete_by_id(id)
     sql = "DELETE FROM producers WHERE id = $1"
-    values = [id]
+    values = [id.to_i]
     SqlRunner.run(sql, values)
   end
 

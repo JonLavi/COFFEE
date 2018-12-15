@@ -41,4 +41,8 @@ class StockItemTest < MiniTest::Test
     assert_equal(20, @stockitem1.optimal_stock)
   end
 
+  def test_stock_item_producer_name
+    assert_equal('YummyCoffeeCo', @stockitem1.producer_name)
+  end
+
 end

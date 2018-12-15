@@ -58,14 +58,14 @@ class Product
 
   def self.find(id)
     sql = "SELECT * FROM products WHERE id = $1"
-    values = [id]
+    values = [id.to_i]
     result = SqlRunner.run(sql, values)
     return Product.new(result[0])
   end
 
   def self.delete_by_id(id)
     sql = "DELETE FROM products WHERE id = $1"
-    values = [id]
+    values = [id.to_i]
     SqlRunner.run(sql, values)
   end
 
