@@ -27,11 +27,13 @@ get '/products/:id' do
   erb(:'products/show')
 end
 
+#Edit Product details
+
 get '/products/:id/edit' do
   @product = Product.find(params['id'].to_i)
   erb(:'products/edit')
 end
 
 
-#Edit Product details
+
 #Delete Product route

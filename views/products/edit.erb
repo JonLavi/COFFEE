@@ -1,1 +1,36 @@
 <h1>Edit Product: <%=@product.name%></h1>
+
+<form class="" action="/product/<%= @product.id %>" method="post">
+
+  <label for="name"> Name: </label>
+  <input id="name" type="text" name="name" value="<%=@product.name%>">
+  <br>
+  <!-- TODO: turn into drop-down, retrieve producer_id and assign -->
+  <label for="producer"> Address: </label>
+  <input id="producer" type="text" name="producer" value="<%=@product.producer%>">
+  <br>
+  <label for="origin"> Origin: </label>
+  <input id="origin" type="text" name="origin" value="<%=@product.origin%>">
+  <br>
+  <label for="roast"> Roast: </label>
+  <input id="roast" type="text" name="roast" value="<%=@product.roast%>">
+  <br>
+  <label for="blend"> Blend: </label>
+  <input id="blend" type="text" name="blend" value="<%=@product.blend%>">
+  <br>
+  <label for="type"> Type: </label>
+  <input id="type" type="text" name="type" value="<%=@product.type%>">
+  <br>
+  <label for="weight"> Weight: </label>
+  <input id="weight" type="number" name="weight" value="<%=@product.weight%>">
+  <br>
+  <label for="unit-cost"> Unit Cost: </label>
+  <input id="unit-cost" type="number" name="unit_cost" value="<%=@product.unit_cost%>">
+  <br>
+  <label for="sell-price">Sell Price:</label>
+  <input id="sell-price" type="number" name="sell_price" value="<%=@product.sell_price%>">
+  <br>
+
+
+  <input type="submit" name="" value="Confirm">
+</form>
