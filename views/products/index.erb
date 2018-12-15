@@ -10,9 +10,9 @@
   </tr>
   <% @products.each do |product| %>
   <tr>
-    <td><a href="/products/<%= product.id %>"><%= product.id %></a></td>
+    <td><%= product.id %></td>
     <td>|</td>
-    <td><%= product.name %></td>
+    <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
     <td>|</td>
     <td><a href="/producers/<%= product.producer_id %>"><%= product.producer %></a></td>
   </tr>
