@@ -28,5 +28,11 @@ get '/producers/:id/edit' do
   erb(:'producers/edit')
 end
 
+post '/producers/:id' do
+  @producer = Producer.new(params)
+  @producer.update()
+  erb(:'producers/show')
+end
+
 #edit producers route
 #delete producers route
