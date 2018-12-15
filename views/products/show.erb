@@ -1,1 +1,55 @@
-<h1>Product Details</h1>
+<h1>@product Details</h1>
+
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>|</th>
+    <th>Name</th>
+    <th>|</th>
+    <th>Producer</th>
+    <th>|</th>
+    <th>Origin</th>
+    <th>|</th>
+    <th>Roast</th>
+    <th>|</th>
+    <th>Blend</th>
+    <th>|</th>
+    <th>Type</th>
+    <th>|</th>
+    <th>Weight</th>
+    <th>|</th>
+    <th>Unit Cost</th>
+    <th>|</th>
+    <th>Sell Price</th>
+    <th>|</th>
+    <th>Markup</th>
+    <th>|</th>
+    <th>Markup Percentage</th>
+  </tr>
+  <tr>
+    <td><a href="/products/<%= @product.id %>"><%= @product.id %></a></td>
+    <td>|</td>
+    <td><%= @product.name %></td>
+    <td>|</td>
+    <td><a href="/producers/<%= @product.producer_id %>"><%= @product.producer_id %></a></td>
+    <td>|</td>
+    <td><%= @product.origin %></td>
+    <td>|</td>
+    <td><%= @product.roast %></td>
+    <td>|</td>
+    <td><%= @product.blend %></td>
+    <td>|</td>
+    <td><%= @product.type %></td>
+    <td>|</td>
+    <td><%= @product.weight %></td>
+    <td>|</td>
+    <td><%= @product.unit_cost %></td>
+    <td>|</td>
+    <td><%= @product.sell_price %></td>
+    <td>|</td>
+    <td><%= @product.markup %></td>
+    <td>|</td>
+    <td><%= @product.markup_percentage %></td>
+  </tr>
+</table>

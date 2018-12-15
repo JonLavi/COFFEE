@@ -10,12 +10,12 @@ get '/products' do
   erb(:'products/index')
 end
 
-
-
 #Create Product route
+
+
 #Show Product details
 get '/products/:id' do
-  @product = Product.find(params[:id])
+  @product = Product.find(params['id'].to_i)
   erb(:'products/show')
 end
 
