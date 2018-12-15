@@ -23,5 +23,10 @@ post '/producers' do
   redirect to("/producers")
 end
 
+get '/producers/:id/edit' do
+  @producer = Producer.find(params['id'].to_i)
+  erb(:'producers/edit')
+end
+
 #edit producers route
 #delete producers route
