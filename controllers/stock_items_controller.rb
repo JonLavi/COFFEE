@@ -12,6 +12,12 @@ get '/stock_items' do
 end
 
 #details of stock item route
+
+get '/stock_items/:id' do
+  @stock_item = StockItem.find(params['id'].to_i)
+  erb(:'stock_items/show')
+end
+
 #new stock item route
 #edit stock items route
 #delete stock items route
