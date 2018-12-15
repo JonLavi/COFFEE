@@ -12,3 +12,11 @@ get '/producers/:id' do
   @producer = Producer.find(params['id'].to_i)
   erb(:'producers/show')
 end
+
+get '/producers/new' do
+  erb(:'producers/new')
+end
+
+#new producer route
+#edit producers route
+#delete producers route
