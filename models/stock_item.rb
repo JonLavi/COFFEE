@@ -18,6 +18,11 @@ class StockItem
     @product_name = product.name
   end
 
+  def producer_id
+    product = Product.find(@product_id)
+    @producer_id = product.producer_id
+  end
+
   def producer_name
     product = Product.find(@product_id)
     producer = Producer.find(product.producer_id)
