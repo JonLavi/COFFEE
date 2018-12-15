@@ -15,6 +15,12 @@ get '/products/new' do
   erb(:'products/new')
 end
 
+post '/products' do
+  product = Product.new(params)
+  product.save()
+  redirect to("/products")
+end
+
 #Show Product details
 get '/products/:id' do
   @product = Product.find(params['id'].to_i)
