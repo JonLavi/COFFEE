@@ -8,15 +8,20 @@ get '/producers' do
   erb(:'producers/index')
 end
 
+get '/producers/new' do
+  erb(:'producers/new')
+end
+
 get '/producers/:id' do
   @producer = Producer.find(params['id'].to_i)
   erb(:'producers/show')
 end
 
-get '/producers/new' do
-  erb(:'producers/new')
+post '/producers' do
+  producer = Producer.new(params)
+  producer.save()
+  redirect to("/producers")
 end
 
-#new producer route
 #edit producers route
 #delete producers route
