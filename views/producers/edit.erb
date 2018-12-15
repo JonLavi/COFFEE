@@ -1,1 +1,12 @@
-<h1>Edit Producer Details</h1>
+<h1>Edit Producer Details: <%= @producer.name %></h1>
+
+<form class="" action="/producers/<%= @producer.id %>" method="post">
+
+  <label for="name"> Name: </label>
+  <input id="name" type="text" name="name" value="<%=@producer.name%>">
+
+  <label for="address"> Address: </label>
+  <input id="address" type="text" name="address" value="<%=@producer.address%>">
+
+  <input type="submit" name="" value="Confirm">
+</form>
