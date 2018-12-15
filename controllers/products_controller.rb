@@ -28,12 +28,15 @@ get '/products/:id' do
 end
 
 #Edit Product details
-
 get '/products/:id/edit' do
   @product = Product.find(params['id'].to_i)
   erb(:'products/edit')
 end
 
-
+post '/products/:id' do
+  @product = Producer.new(params)
+  @product.update()
+  erb(:'products/show')
+end
 
 #Delete Product route
