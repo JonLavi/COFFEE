@@ -3,11 +3,20 @@
 <p>
 Stock Id: <%= @stock_item.id %>
 <br>
-Product Name: <%= @stock_item.product %>
+Product Name: <%= @stock_item.product_name %>
 <br>
-Producer: <a href="/producers/<%= @stock_item.producer_id %>"><%= @stock_item.producer %></a>
+Producer: <a href="/producers/<%=@stock_item.producer_id%>"><%= @stock_item.producer_name %></a>
 <br>
-
+Units in Stock: <%= @stock_item.units_in_stock %>
+<br>
+Optimal Stock: <%= @stock_item.optimal_stock %>
+<br>
+Stock Buy Value: <%= @stock_item.stock_buy_value %>
+<br>
+Stock Sell Value: <%= @stock_item.stock_sell_value %>
+<br>
+Profit: <%= @stock_item.profit %>
+<br>
 
 <a href="/products/<%= @stock_item.id %>/edit">Edit</a>
 <a href="/products/<%= @stock_item.id %>/delete">Delete</a>
