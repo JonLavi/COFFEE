@@ -14,5 +14,11 @@ end
 
 #Create Product route
 #Show Product details
+get '/products/:id' do
+  @product = Product.find(params[:id])
+  erb(:'products/show')
+end
+
+
 #Edit Product details
 #Delete Product route
