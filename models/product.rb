@@ -20,7 +20,7 @@ class Product
   end
 
   def producer
-    return producer.find(@producer.id).name
+    return Producer.find(@producer_id).name
   end
 
   def markup
