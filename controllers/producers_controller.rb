@@ -3,18 +3,16 @@ require('sinatra/contrib/all') if development?
 require_relative('../models/producer')
 also_reload('./models/*')
 
+
+#Show all Producers
 get '/producers' do
   @producers = Producer.all
   erb(:'producers/index')
 end
 
+#Create new Producer
 get '/producers/new' do
   erb(:'producers/new')
-end
-
-get '/producers/:id' do
-  @producer = Producer.find(params['id'].to_i)
-  erb(:'producers/show')
 end
 
 post '/producers' do
@@ -23,6 +21,13 @@ post '/producers' do
   redirect to("/producers")
 end
 
+#Show Producer details
+get '/producers/:id' do
+  @producer = Producer.find(params['id'].to_i)
+  erb(:'producers/show')
+end
+
+#Edit Producer details
 get '/producers/:id/edit' do
   @producer = Producer.find(params['id'].to_i)
   erb(:'producers/edit')
@@ -34,5 +39,4 @@ post '/producers/:id' do
   erb(:'producers/show')
 end
 
-#edit producers route
-#delete producers route
+#Delete Producer route
