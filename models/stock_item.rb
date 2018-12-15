@@ -3,7 +3,7 @@ require_relative('product')
 
 class StockItem
 
-  attr_reader :ids
+  attr_reader :id
   attr_accessor :product_id, :product_name, :units_in_stock, :optimal_stock
 
   def initialize(options)
