@@ -6,7 +6,7 @@ also_reload('./models/*')
 
 #Show all Products
 get '/products' do
-  @products = Producer.all
+  @products = Product.all
   erb(:'products/index')
 end
 

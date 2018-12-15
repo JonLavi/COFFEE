@@ -1,1 +1,20 @@
 <h1>All Products</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>|</th>
+    <th>Name</th>
+    <th>|</th>
+    <th>Producer</th>
+  </tr>
+  <% @products.each do |product| %>
+  <tr>
+    <td><a href="/products/<%= product.id %>"><%= product.id %></a></td>
+    <td>|</td>
+    <td><%= product.name %></td>
+    <td>|</td>
+    <td><a href="/producers/<%= product.producer_id %>"><%= (Producer.find(product.producer_id)).name %></a></td>
+  </tr>
+  <% end %>
+</table>
