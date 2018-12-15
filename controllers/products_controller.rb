@@ -11,7 +11,9 @@ get '/products' do
 end
 
 #Create Product route
-
+get '/products/new' do
+  erb(:'products/new')
+end
 
 #Show Product details
 get '/products/:id' do
