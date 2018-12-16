@@ -33,5 +33,16 @@ get '/stock_items/:id' do
 end
 
 
-#edit stock items route
+#Edit Stock Item details
+get '/stock_items/:id/edit' do
+  @stock_item = StockItem.find(params['id'].to_i)
+  erb(:'stock_items/edit')
+end
+
+post '/stock_items/:id' do
+  stock_item = StockItem.new(params)
+  stock_item.update
+  redirect to "/stock_item/#{params['id']}"
+end
+
 #delete stock items route
