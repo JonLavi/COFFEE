@@ -32,6 +32,5 @@ get '/stock_items/:id' do
 end
 
 
-
 #edit stock items route
 #delete stock items route
