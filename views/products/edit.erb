@@ -6,8 +6,6 @@
   <input id="name" type="text" name="name" value="<%=@product.name%>">
   <br>
 
-  <!-- TODO: turn into drop-down, retrieve producer_id and assign -->
-
   <select name="producer_id" id="producer_select" selected="<%= @product.producer_id  %>">
     <% @producers.each do |producer| %>
       <% if producer.id == @product.producer_id %>
