@@ -12,6 +12,7 @@ end
 
 #Create Product route
 get '/products/new' do
+  @producers = Producer.all
   erb(:'products/new')
 end
 

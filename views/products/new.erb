@@ -5,9 +5,15 @@
   <input id="name" type="text" name="name" >
   <br>
   <!-- TODO: turn into drop-down, retrieve producer_id and assign -->
-  <label for="producer">Producer:</label>
-  <input id="producer" type="text" name="producer" >
+
+  <label for="producer_select">Select Producer:</label>
+  <select name="producer_id" id="producer_select">
+    <% @producers.each do |producer| %>
+        <option value=<%= producer.id %>><%= producer.name %></option>
+    <% end %>
+  </select>
   <br>
+
   <label for="origin">Origin:</label>
   <input id="origin" type="text" name="origin" >
   <br>
