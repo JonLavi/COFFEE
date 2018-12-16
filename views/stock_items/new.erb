@@ -2,7 +2,6 @@
 
 <form class="" action="/stock_items" method="post">
 
-
   <label for="product_select">Select product:</label>
   <select name="product_id" id="product_select">
     <% @products.each do |product| %>
@@ -10,8 +9,6 @@
     <% end %>
   </select>
   <br>
-
-
 
   <label for="units-in-stock">Units in Stock:</label>
   <input id="units-in-stock" type="number" name="units_in_stock" >
@@ -21,35 +18,3 @@
   <br>
   <input type="submit" name="" value="Add Stock Item">
 </form>
-
-
-
-<!-- def product_name
-  product = Product.find(@product_id)
-  @product_name = product.name
-end
-
-def product_id
-  product = Product.find(@product_id)
-  @product_id = product.product_id
-end
-
-def product_name
-  product = Product.find(@product_id)
-  product = product.find(product.product_id)
-  @product_name = product.name
-end
-
-def stock_buy_value
-  product = Product.find(@product_id)
-  @stock_buy_value = @units_in_stock * product.unit_cost
-end
-
-def stock_sell_value
-  product = Product.find(@product_id)
-  @stock_sell_value = @units_in_stock * product.sell_price
-end
-
-def profit
-  @profit = @stock_sell_value - @stock_buy_value
-end -->

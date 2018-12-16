@@ -32,6 +32,18 @@ get '/stock_items/:id' do
   erb(:'stock_items/show')
 end
 
+#Edit Stock Item details
+get '/stock_items/:id/edit' do
+  @stock_item = StockItem.find(params['id'].to_i)
+  @producys = Product.all
+  erb(:'stock_items/edit')
+end
+
+post '/stock_items/:id' do
+  stock_item = StockItem.new(params)
+  stock_item.update
+  redirect to "/stock_items/#{params['id']}"
+end
 
 #Edit Stock Item details
 get '/stock_items/:id/edit' do
