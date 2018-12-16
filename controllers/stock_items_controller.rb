@@ -14,6 +14,7 @@ end
 #Create Stock Item route
 
 get '/stock_items/new' do
+  @products = Product.all
   @stock_item = StockItem.all
   erb(:'stock_items/new')
 end
