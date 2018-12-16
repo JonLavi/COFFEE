@@ -5,13 +5,11 @@
 <table>
   <tr>
     <th>Id</th>
-    <th>|</th>
     <th>Name</th>
   </tr>
   <% @producers.each do |producer| %>
   <tr>
     <td><%= producer.id %></td>
-    <th>:</th>
     <td><a href="/producers/<%= producer.id %>"><%= producer.name %></a></td>
   </tr>
   <% end %>
