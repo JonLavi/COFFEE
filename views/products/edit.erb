@@ -1,13 +1,23 @@
 <h1>Edit Product: <%=@product.name%></h1>
 
-<form class="" action="/product/<%= @product.id %>" method="post">
+<form class="" action="/products/<%= @product.id %>" method="post">
 
   <label for="name"> Name: </label>
   <input id="name" type="text" name="name" value="<%=@product.name%>">
   <br>
+
   <!-- TODO: turn into drop-down, retrieve producer_id and assign -->
-  <label for="producer"> Address: </label>
-  <input id="producer" type="text" name="producer" value="<%=@product.producer%>">
+
+  <select name="producer_id" id="producer_select" selected="<%= @product.producer_id  %>">
+    <% @producers.each do |producer| %>
+      <% if producer.id == @product.producer_id %>
+        <option value=<%= producer.id %> selected ><%= producer.name %></option>
+      <% else %>
+        <option value=<%= producer.id %>><%= producer.name %></option>
+      <% end %>
+    <% end %>
+  </select>
+
   <br>
   <label for="origin"> Origin: </label>
   <input id="origin" type="text" name="origin" value="<%=@product.origin%>">
