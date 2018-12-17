@@ -30,7 +30,7 @@ class Product
   end
 
   def markup_percentage()
-    markup_percentage = markup()/@unit_cost.to_f
+    markup_percentage = (100 * markup()/@unit_cost.to_f).round(2)
   end
 
   def stock_buy_value()

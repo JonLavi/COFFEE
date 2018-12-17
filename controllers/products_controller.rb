@@ -42,3 +42,8 @@ post '/products/:id' do
 end
 
 #Delete Product route
+
+get '/products/:id/delete' do
+  Product.delete_by_id(params['id'].to_i)
+  redirect to("/products")
+end

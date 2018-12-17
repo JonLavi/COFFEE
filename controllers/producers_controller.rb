@@ -40,3 +40,8 @@ post '/producers/:id' do
 end
 
 #Delete Producer route
+
+get '/producers/:id/delete' do
+  Producer.delete_by_id(params['id'].to_i)
+  redirect to("/producers")
+end

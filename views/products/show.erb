@@ -25,6 +25,16 @@ Sell Price: <%= @product.sell_price %>
 Markup: <%= @product.markup %>
 <br>
 Markup Percentage: <%= @product.markup_percentage %>
+<br>
+Units in Stock: <%= @product.units_in_stock %>
+<br>
+Optimal Stock: <%= @product.optimal_stock %>
+<br>
+Stock Buy Value: <%= @product.stock_buy_value %>
+<br>
+Stock Sell Value:<%= @product.stock_sell_value %>
+<br>
+Profit: <%= @product.profit%>
 </p>
 
 <a href="/products/<%= @product.id %>/edit">Edit</a>
