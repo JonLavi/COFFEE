@@ -12,7 +12,7 @@
   <% @stock_items.each do |stock_item| %>
   <tr>
     <td><a href="/stock_items/<%= stock_item.id %>"><%= stock_item.id %></a></td>
-    <td><a href="/products/<%= stock_item.product_id %>"><%= stock_item.product_name %></a></td>
+    <td><a href="/stock_items/<%= stock_item.id %>"><%= stock_item.product_name %></a></td>
     <td><%= stock_item.units_in_stock %></td>
     <td><%= stock_item.optimal_stock %></td>
   </tr>

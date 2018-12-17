@@ -1,9 +1,7 @@
 require('pry')
 require_relative('producer')
 require_relative('product')
-require_relative('stock_item')
 
-StockItem.delete_all()
 Product.delete_all()
 Producer.delete_all()
 
@@ -26,6 +24,8 @@ product1 = Product.new({'name' => 'Colombian Supremo',
            'weight' => 500,
            'unit_cost' => 5,
            'sell_price' => 6,
+           'units_in_stock' => 10,
+           'optimal_stock' => 20
          })
 product1.save()
 
@@ -37,22 +37,11 @@ product2 = Product.new({'name' => 'Kickass Kenyan',
            'type' => 'Medium Coarse',
            'weight' => 500,
            'unit_cost' => 4,
-           'sell_price' => 5,})
-product2.save()
-
-stockitem1 = StockItem.new({'product_id' => product1.id,
-           'product_name' => product1.name,
-           'units_in_stock' => 10,
-           'optimal_stock' => 20})
-stockitem1.save()
-
-stockitem2 = StockItem.new({'product_id' => product2.id,
-           'product_name' => product2.name,
+           'sell_price' => 5,
            'units_in_stock' => 15,
-           'optimal_stock' => 30})
-stockitem2.save()
-
-
+           'optimal_stock' => 30
+           })
+product2.save()
 
 ##### Tested Methods: #####
 # product1.name = "ColomboCoffee"

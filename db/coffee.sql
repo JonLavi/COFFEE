@@ -1,4 +1,3 @@
-DROP TABLE stock_items;
 DROP TABLE products;
 DROP TABLE producers;
 
@@ -21,18 +20,6 @@ CREATE TABLE products
   weight INT8,
   unit_cost INT8,
   sell_price INT8,
-  markup real,
-  markup_percentage real
-);
-
-CREATE TABLE stock_items
-(
-  id SERIAL8 PRIMARY KEY,
-  product_id INT8 UNIQUE REFERENCES products(id) ON DELETE CASCADE,
-  product_name VARCHAR(255),
   units_in_stock INT8,
-  optimal_stock INT8,
-  stock_buy_value INT8,
-  stock_sell_value INT8,
-  profit real
-)
+  optimal_stock INT8
+);
