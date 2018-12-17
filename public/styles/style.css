@@ -64,22 +64,14 @@ table {
   text-align: center;
 }
 
-thead {
-  font-weight: bold;
+th {
+  background-color: var(--colour5);
+  color: white;
 }
 
-/* tr:hover {background-color: var(--colour4);} */
+tr:hover {background-color: var(--colour4);}
 
 /* tr:nth-child(even) {background-color: #f2f2f2;} */
-
-th td {
-  border-bottom: 1px solid #ddd;
-  padding: 20px;
-}
-
-td {
-  border: 1px solid black;
-}
 
 #stock_low{
   background-color: orange;
@@ -87,9 +79,4 @@ td {
 
 #stock_empty{
   background-color: red;
-}
-
-th {
-  background-color: var(--colour5);
-  color: white;
 }
