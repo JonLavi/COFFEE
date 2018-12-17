@@ -88,4 +88,13 @@ class ProductTest < MiniTest::Test
     assert_equal(true, @product1.in_stock?)
   end
 
+  def test_product_low_stock__stock_low
+    @product1.units_in_stock = 2
+    assert_equal(true, @product1.low_stock?)
+  end
+
+  def test_product_low_stock__stock_sufficient
+    assert_equal(false, @product1.low_stock?)
+  end
+
 end

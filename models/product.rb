@@ -49,6 +49,10 @@ class Product
     @units_in_stock != 0 ? true : false
   end
 
+  def low_stock?
+    @units_in_stock < @optimal_stock/5 ? true : false
+  end
+
 #### SQL CRUD Actions ####
 
   def save()
