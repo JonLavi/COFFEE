@@ -7,12 +7,32 @@
     <th>Id</th>
     <th>Name</th>
     <th>Producer</th>
+    <th>Weight</th>
+    <th>Unit Cost</th>
+    <th>Sell Price</th>
+    <th>Markup</th>
+    <th>Markup Percentage</th>
+    <th>Units in Stock</th>
+    <th>Optimal Stock</th>
+    <th>Stock Buy Value</th>
+    <th>Stock Sell Value</th>
+    <th>Profit</th>
   </tr>
   <% @products.each do |product| %>
   <tr>
     <td><%= product.id %></td>
     <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
     <td><a href="/producers/<%= product.producer_id %>"><%= product.producer %></a></td>
+    <td><%= product.weight %></td>
+    <td><%= product.unit_cost %></td>
+    <td><%= product.sell_price %></td>
+    <td><%= product.markup %></td>
+    <td><%= product.markup_percentage%></td>
+    <td><%= product.units_in_stock %></td>
+    <td><%= product.optimal_stock %></td>
+    <td><%= product.stock_buy_value %></td>
+    <td><%= product.stock_sell_value %></td>
+    <td><%= product.profit%></td>
   </tr>
   <% end %>
 </table>
