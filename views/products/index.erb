@@ -31,16 +31,16 @@
 
     <!-- Conditional Rendering of Units in Stock -->
 
-      <!-- <% if product.in_stock? == false  %>
-      <td id="stock_empty"><%= product.units_in_stock %></td>
+      <% if product.in_stock? == false  %>
+        <td id="stock_empty"><%= product.units_in_stock %></td>
       <% elsif product.low_stock? == true %>
-      <td id="stock_low"><%= product.units_in_stock %></td>
+        <td id="stock_low"><%= product.units_in_stock %></td>
       <% else %>
-
-      <% end %> -->
+        <td><%= product.units_in_stock %></td>
+      <% end %>
 
     <!-- End Conditional Formatting -->
-    <td><%= product.units_in_stock %></td>
+
     <td><%= product.optimal_stock %></td>
     <td><%= product.stock_buy_value %></td>
     <td><%= product.stock_sell_value %></td>

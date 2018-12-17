@@ -81,7 +81,11 @@ td {
   border: 1px solid black;
 }
 
-td .stock_empty{
+#stock_low{
+  background-color: orange;
+}
+
+#stock_empty{
   background-color: red;
 }
 
