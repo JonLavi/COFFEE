@@ -58,7 +58,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0.5rem;
   border-color: black;
-  background-color: #cea25a;
+  /* background-color: #cea25a; */
   vertical-align: middle;
   text-align: center;
 }
@@ -67,7 +67,7 @@ thead {
   font-weight: bold;
 }
 
-tr:hover {background-color: var(--colour4);}
+/* tr:hover {background-color: var(--colour4);} */
 
 /* tr:nth-child(even) {background-color: #f2f2f2;} */
 
@@ -78,6 +78,10 @@ th td {
 
 td {
   border: 1px solid black;
+}
+
+td .stock_empty{
+  background-color: red;
 }
 
 th {
