@@ -6,7 +6,7 @@ class Producer
   attr_accessor :name, :address
 
   def initialize(options)
-    @id = options['id'] if options['id'] #integer
+    @id = options['id'].to_i if options['id'] #integer
     @name = options['name'] #string
     @address = options['address'] #string
   end

@@ -1,5 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all') if development?
+require_relative('../models/producer')
 require_relative('../models/product')
 also_reload('./models/*')
 

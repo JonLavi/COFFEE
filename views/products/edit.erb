@@ -5,16 +5,26 @@
   <label for="name"> Name: </label>
   <input id="name" type="text" name="name" value="<%=@product.name%>">
   <br>
+  <br>
 
+  producer id: <%= @product.producer_id %><br>
+  list of producer ids: <br>
+  <% @producers.each do |producer| %>
+    <%= producer.id %> <br>
+  <% end %>
+
+  <br>
+  <br>
+
+  <!-- Make the correct producer be pre-selected -->
+  <label for="producer_id"> Producer: </label>
   <select name="producer_id" id="producer_select" selected="<%= @product.producer_id  %>">
     <% @producers.each do |producer| %>
-      <% if producer.id == @product.producer_id %>
-        <option value=<%= producer.id %> selected ><%= producer.name %></option>
-      <% else %>
-        <option value=<%= producer.id %>><%= producer.name %></option>
-      <% end %>
+        <option <%="selected" if @product.producer_id == producer.id%> value = '<%=producer.id%>'><%=producer.name%></option>
     <% end %>
   </select>
+
+
 
   <br>
   <label for="origin"> Origin: </label>

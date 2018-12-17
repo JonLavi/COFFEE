@@ -7,7 +7,7 @@ class Product
   attr_accessor :name, :producer_id, :origin, :roast, :blend, :type, :weight, :unit_cost, :sell_price, :units_in_stock, :optimal_stock
 
   def initialize(options)
-    @id = options['id'] if options['id'] #integer
+    @id = options['id'].to_i if options['id'] #integer
     @name = options['name'] #string
     @producer_id = options['producer_id'].to_i #integer
     @origin = options['origin'] #string

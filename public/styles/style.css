@@ -47,6 +47,28 @@ nav a{
   padding-right: 6px;
 }
 
+
+/* ------- Design details sections ------- */
+
+#product-details-characteristics{
+  display: inline-block;
+  padding: 20px;
+  background-color: var(--colour4);
+}
+
+#product-details-pricing{
+  display: inline-block;
+  padding: 20px;
+  background-color: var(--colour4);
+}
+
+#producer-details{
+  display: inline-block;
+  padding: 20px;
+  background-color: var(--colour4);
+}
+
+
 /* ------- Design data tables ------- */
 
 
@@ -59,7 +81,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0.5rem;
   border-color: black;
-  /* background-color: #cea25a; */
+  background-color: var(--colour1);
   vertical-align: middle;
   text-align: center;
 }

@@ -1,6 +1,8 @@
 require('sinatra')
 require('sinatra/contrib/all') if development?
 require_relative('../models/producer')
+require_relative('../models/product')
+require('pry')
 also_reload('./models/*')
 
 
@@ -23,6 +25,7 @@ end
 
 #Show Producer details
 get '/producers/:id' do
+  @products = Product.all
   @producer = Producer.find(params['id'].to_i)
   erb(:'producers/show')
 end

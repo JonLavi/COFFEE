@@ -4,14 +4,13 @@
   <label for="name">Name:</label>
   <input id="name" type="text" name="name" required="required" >
   <br>
-  <!-- TODO: turn into drop-down, retrieve producer_id and assign -->
 
   <label for="producer_select">Select Producer:</label>
   <select name="producer_id" id="producer_select">
     <% @producers.each do |producer| %>
         <option value=<%= producer.id %>><%= producer.name %></option>
     <% end %>
-  </select>
+  </select> <a href="producers/new">Add New Producer!</a>
   <br>
 
   <label for="origin">Origin:</label>

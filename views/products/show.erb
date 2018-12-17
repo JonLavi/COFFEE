@@ -1,5 +1,8 @@
 <h1>Product Details: <%= @product.name%></h1>
 
+<section id="product-details-characteristics">
+
+<h2>Coffee Details</h2>
 
 <p>
 Id: <%= @product.id %>
@@ -18,6 +21,12 @@ Type: <%= @product.type %>
 <br>
 Weight: <%= @product.weight %>
 <br>
+</section>
+
+<section id="product-details-pricing">
+
+<h2>Pricing/Stock Details</h2>
+
 Unit Cost: <%= @product.unit_cost %>
 <br>
 Sell Price: <%= @product.sell_price %>
@@ -32,10 +41,13 @@ Optimal Stock: <%= @product.optimal_stock %>
 <br>
 Stock Buy Value: <%= @product.stock_buy_value %>
 <br>
-Stock Sell Value:<%= @product.stock_sell_value %>
+Stock Sell Value: <%= @product.stock_sell_value %>
 <br>
 Profit: <%= @product.profit%>
 </p>
+</section>
 
+
+<h2>Actions:</h2>
 <a href="/products/<%= @product.id %>/edit">Edit</a>
 <a href="/products/<%= @product.id %>/delete">Delete</a>
