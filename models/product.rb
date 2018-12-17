@@ -45,6 +45,10 @@ class Product
     profit = stock_sell_value() - stock_buy_value()
   end
 
+  def in_stock?
+    @units_in_stock != 0 ? true : false
+  end
+
 #### SQL CRUD Actions ####
 
   def save()

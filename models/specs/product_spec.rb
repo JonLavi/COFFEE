@@ -5,6 +5,9 @@ require_relative('../product')
 class ProductTest < MiniTest::Test
 
   def setup
+    options1 = {'name'=> 'YummyCoffeeCo', 'address'=> '123 Fake Street'}
+    @producer1 = Producer.new(options1)
+
     options = {'name' => 'Colombian Supremo',
                'producer_id' => 1,
                'origin' => 'Colombia',
@@ -74,6 +77,15 @@ class ProductTest < MiniTest::Test
 
   def test_stock_item_optimal_stock
     assert_equal(20, @product1.optimal_stock)
+  end
+
+  def test_product_in_stock__not_in_stock
+    @product1.units_in_stock = 0
+    assert_equal(false, @product1.in_stock?)
+  end
+
+  def test_product_in_stock__is_in_stock
+    assert_equal(true, @product1.in_stock?)
   end
 
 end
