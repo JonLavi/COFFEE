@@ -4,7 +4,7 @@ require_relative('producer')
 class Product
 
   attr_reader :id
-  attr_accessor :name, :producer_id, :origin, :roast, :blend, :type, :weight, :unit_cost, :sell_price
+  attr_accessor :name, :producer_id, :origin, :roast, :blend, :type, :weight, :unit_cost, :sell_price, :units_in_stock, :optimal_stock
 
   def initialize(options)
     @id = options['id'] if options['id'] #integer
@@ -17,39 +17,52 @@ class Product
     @weight = options['weight'].to_i #integer
     @unit_cost = options['unit_cost'].to_i #integer
     @sell_price = options['sell_price'].to_i #integer
+    @units_in_stock = options['units_in_stock'].to_i #integer
+    @optimal_stock = options['optimal_stock'].to_i #integer
   end
 
-  def producer
+  def producer()
     return Producer.find(@producer_id).name
   end
 
-  def markup
-    @markup = @sell_price-@unit_cost
+  def markup()
+    markup = @sell_price-@unit_cost
   end
 
-  def markup_percentage
-    @markup_percentage = markup()/@unit_cost.to_f
+  def markup_percentage()
+    markup_percentage = markup()/@unit_cost.to_f
+  end
+
+  def stock_buy_value()
+    stock_buy_value = @units_in_stock * @unit_cost
+  end
+
+  def stock_sell_value()
+    stock_sell_value = @units_in_stock * @sell_price
+  end
+
+  def profit
+    profit = stock_sell_value() - stock_buy_value()
   end
 
 #### SQL CRUD Actions ####
 
   def save()
     sql = "INSERT INTO products
-          (name, producer_id, origin, roast, blend, type, weight, unit_cost, sell_price, markup, markup_percentage)
+          (name, producer_id, origin, roast, blend, type, weight, unit_cost, sell_price, units_in_stock, optimal_stock)
           VALUES
           ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
           RETURNING id"
-    values = [@name, @producer_id, @origin, @roast, @blend, @type, @weight, @unit_cost, @sell_price, markup(), markup_percentage()]
+    values = [@name, @producer_id, @origin, @roast, @blend, @type, @weight, @unit_cost, @sell_price, @units_in_stock, @optimal_stock]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
   end
 
   def update()
     sql = "UPDATE products SET
-          (name, producer_id, origin, roast, blend, type, weight, unit_cost, sell_price, markup, markup_percentage) =
+          (name, producer_id, origin, roast, blend, type, weight, unit_cost, sell_price, units_in_stock, optimal_stock) =
           ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) WHERE id = $12"
-    values = [@name, @producer_id, @origin, @roast, @blend, @type, @weight, @unit_cost, @sell_price, markup(), markup_percentage(), @id]
-    SqlRunner.run(sql, values)
+    values = [@name, @producer_id, @origin, @roast, @blend, @type, @weight, @unit_cost, @sell_price, @units_in_stock, @optimal_stock, @id]
   end
 
   def delete()

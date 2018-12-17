@@ -14,6 +14,8 @@ class ProductTest < MiniTest::Test
                'weight' => 500,
                'unit_cost' => 5,
                'sell_price' => 6,
+               'units_in_stock' => 10,
+               'optimal_stock' => 20
              }
     @product1 = Product.new(options)
   end
@@ -24,6 +26,10 @@ class ProductTest < MiniTest::Test
 
   def test_product_producer_id
     assert_equal(1, @product1.producer_id)
+  end
+
+  def test_stock_item_producer
+    assert_equal('YummyCoffeeCo', @product1.producer)
   end
 
   def test_product_origin
@@ -60,6 +66,14 @@ class ProductTest < MiniTest::Test
 
   def test_product_markup_percentage
     assert_equal(0.2, @product1.markup_percentage)
+  end
+
+  def test_stock_item_units_in_stock
+    assert_equal(10, @product1.units_in_stock)
+  end
+
+  def test_stock_item_optimal_stock
+    assert_equal(20, @product1.optimal_stock)
   end
 
 end
