@@ -1,4 +1,6 @@
+require_relative('product')
 require_relative('../db/sql_runner')
+require('pry')
 
 class Producer
 
@@ -9,6 +11,13 @@ class Producer
     @id = options['id'].to_i if options['id'] #integer
     @name = options['name'] #string
     @address = options['address'] #string
+  end
+
+  def product_list
+    all_products = Product.all
+    product_list = []
+    all_products.each {|product| product_list << product if product.producer_id.to_i == @id.to_i}
+    return product_list
   end
 
 #### SQL CRUD Actions ####
