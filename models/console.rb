@@ -52,14 +52,6 @@ product2.save()
 # producer1.address = "1 Elm Street"
 # producer1.update()
 
-#stockitem1.stock_buy_value()
-#stockitem1.stock_sell_value()
-#stockitem1.profit()
-
-# stockitem1.product_id = (product2.id)
-# stockitem1.units_in_stock = 50
-# stockitem1.update()
-
 # Producer.all()
 # Product.all()
 # StockItem.all()

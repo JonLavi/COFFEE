@@ -63,6 +63,7 @@ class Product
           (name, producer_id, origin, roast, blend, type, weight, unit_cost, sell_price, units_in_stock, optimal_stock) =
           ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) WHERE id = $12"
     values = [@name, @producer_id, @origin, @roast, @blend, @type, @weight, @unit_cost, @sell_price, @units_in_stock, @optimal_stock, @id]
+    results = SqlRunner.run(sql, values)
   end
 
   def delete()
