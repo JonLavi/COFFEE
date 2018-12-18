@@ -1,22 +1,22 @@
 <h1>All Producers</h1>
 
-<a href="producers/new"><i class="fas fa-industry"></i>Add Producer</a>
-
 <table>
   <tr>
     <th>Id</th>
     <th>Name</th>
+    <th>Address</th>
   </tr>
   <% @producers.each do |producer| %>
   <tr>
     <td><%= producer.id %></td>
     <td><a href="/producers/<%= producer.id %>"><%= producer.name %></a></td>
+    <td><%= producer.address %></td>
   </tr>
   <% end %>
 </table>
 
 <section class="add-producer">
-  <h1>Create New Producer</h1>
+  <h1><i class="fas fa-industry"></i> Create New Producer</h1>
 
   <form class="" action="/producers" method="post">
     <label for="name">Name:</label>

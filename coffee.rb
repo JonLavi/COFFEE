@@ -4,5 +4,6 @@ require_relative('controllers/producers_controller')
 require_relative('controllers/products_controller')
 
 get '/' do
+  @products = Product.all
   erb( :index )
 end
