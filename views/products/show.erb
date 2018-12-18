@@ -23,6 +23,7 @@ Weight: <%= @product.weight %>
 <br>
 </section>
 
+
 <section id="product-details-pricing">
 
 <h2>Pricing/Stock Details</h2>
@@ -49,5 +50,5 @@ Profit: <%= @product.profit%>
 
 
 <h2>Actions:</h2>
-<a href="/products/<%= @product.id %>/edit">Edit</a>
-<a href="/products/<%= @product.id %>/delete">Delete</a>
+<a href="/products/<%= @product.id %>/edit"><i class="fas fa-pencil-alt"></i>Edit</a>
+<a href="/products/<%= @product.id %>/delete"><i class="fas fa-trash-alt"></i>Delete</a>
