@@ -12,7 +12,7 @@
 /* ------- Use the sensible box-model , define fonts ------- */
 * {
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', Helvetica, sans-serif;
 }
 
 /* ------- Design Page Layout------- */
@@ -50,7 +50,13 @@ h1 {
   z-index: 10;
 }
 
-.add-producer {
+img {
+  padding: 20px;
+}
+
+/* ------- Design add entry window ------- */
+
+.add-producer-window {
   position: fixed;
   top: 120px;
   right: 50px;
@@ -64,51 +70,6 @@ h1 {
   background-color: var(--colour4);
 }
 
-a:link {
-  font-weight: bold;
-  text-decoration: none;
-  color: inherit;
-}
-a:visited {
-  text-decoration: none;
-  color: inherit;
-}
-a:hover {
-  font-weight: bold;
-  text-decoration: underline;
-  color: inherit;
-}
-a:active {
-  font-weight: bold;
-  text-decoration: underline;
-  color: inherit;
-}
-
-img {
-  padding: 20px;
-}
-/* ------- Design Nav Bar ------- */
-
-nav{
-  position: fixed;
-  top: 100px;
-  left: 0;
-  width: 200px;
-  height: 300px;
-  border: 3px solid var(--colour2);
-  font-weight: bold;
-  background-color: var(--colour5);
-  font-size: 24px;
-}
-
-nav ul{
-  list-style-type: none;
-  padding-left: 10px;
-  color: white;
-  padding-left: 15px;
-
-}
-
 /* ------- Design details sections ------- */
 
 .details-box {
@@ -117,46 +78,4 @@ nav ul{
   background-color: var(--colour4);
   border: 3px solid var(--colour5);
   border-radius: 15px 50px;
-}
-
-/* ------- Design data tables ------- */
-
-
-table, th, td {
-  border: 1px solid black;
-  font-size: 16px;
-}
-
-td {
-    padding: 7px;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0.5rem;
-  border-color: black;
-  background-color: var(--colour1);
-  vertical-align: middle;
-  text-align: center;
-}
-
-th {
-  background-color: var(--colour5);
-  color: white;
-}
-
-.stock-details{
-  background-color: var(--colour4);
-}
-
-tr:hover {background-color: var(--colour4);}
-
-/* tr:nth-child(even) {background-color: #f2f2f2;} */
-
-#stock_low{
-  background-color: orange;
-}
-
-#stock_empty{
-  background-color: red;
 }

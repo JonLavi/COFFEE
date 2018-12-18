@@ -1,0 +1,41 @@
+/* ------- Design data tables ------- */
+
+
+table, th, td {
+  border: 1px solid black;
+  font-size: 16px;
+}
+
+td {
+    padding: 7px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0.5rem;
+  border-color: black;
+  background-color: var(--colour1);
+  vertical-align: middle;
+  text-align: center;
+}
+
+th {
+  background-color: var(--colour5);
+  color: white;
+}
+
+.stock-details{
+  background-color: var(--colour4);
+}
+
+tr:hover {background-color: var(--colour4);}
+
+/* tr:nth-child(even) {background-color: #f2f2f2;} */
+
+#stock_low{
+  background-color: orange;
+}
+
+#stock_empty{
+  background-color: red;
+}
