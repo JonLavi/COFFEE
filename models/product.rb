@@ -26,7 +26,7 @@ class Product
   end
 
   def markup()
-    markup = @sell_price-@unit_cost
+    markup = @sell_price - @unit_cost
   end
 
   def markup_percentage()

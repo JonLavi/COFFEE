@@ -14,12 +14,11 @@
 <section class="details-box">
 
 <h2> Producer's products: </h2>
+<ul>
+  <% @producer.product_list.each do |product| %>
+    <li><a href="products/<%=product.id%>"><%= product.name %></a></li>
+  <%end%>
+</ul>
 
-<% @producer.product_list.each do |product| %>
-
-<a href="products/<%=product.id%>"><%= product.name %></a>
-<br>
-
-<%end%>
 
 </section>

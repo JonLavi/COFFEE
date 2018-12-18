@@ -64,21 +64,25 @@ h1 {
   background-color: var(--colour4);
 }
 
-
-
 a:link {
+  font-weight: bold;
   text-decoration: none;
+  color: inherit;
 }
 a:visited {
   text-decoration: none;
+  color: inherit;
 }
 a:hover {
+  font-weight: bold;
   text-decoration: underline;
+  color: inherit;
 }
 a:active {
+  font-weight: bold;
   text-decoration: underline;
+  color: inherit;
 }
-
 
 img {
   padding: 20px;
@@ -100,16 +104,10 @@ nav{
 nav ul{
   list-style-type: none;
   padding-left: 10px;
-}
-
-nav a{
-  text-decoration: none currentcolor solid;
-  padding-left: 3px;
-  padding-right: 6px;
   color: white;
+  padding-left: 15px;
+
 }
-
-
 
 /* ------- Design details sections ------- */
 
@@ -145,6 +143,10 @@ table {
 th {
   background-color: var(--colour5);
   color: white;
+}
+
+.stock-details{
+  background-color: var(--colour4);
 }
 
 tr:hover {background-color: var(--colour4);}
