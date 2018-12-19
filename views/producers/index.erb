@@ -5,12 +5,14 @@
     <th>Id</th>
     <th>Name</th>
     <th>Address</th>
+    <th></th>
   </tr>
   <% @producers.each do |producer| %>
   <tr>
     <td><%= producer.id %></td>
     <td><a href="/producers/<%= producer.id %>"><%= producer.name %></a></td>
     <td><%= producer.address %></td>
+    <td><a href="/products/producer/<%= producer.id %>">Show Product Stock</a></td>
   </tr>
   <% end %>
 </table>

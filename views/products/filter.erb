@@ -9,7 +9,6 @@
     <tr>
       <th>Id</th>
       <th>Name</th>
-      <th>Producer</th>
       <th>Units in Stock</th>
       <th>Optimal Stock</th>
       <th>Weight (g)</th>
@@ -26,7 +25,6 @@
         <tr>
           <td><%= product.id %></td>
           <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
-          <td><a href="/producers/<%= product.producer_id %>"><%= product.producer %></a></td>
 
           <!-- Conditional Rendering of Units in Stock -->
             <% if product.in_stock? == false  %>
