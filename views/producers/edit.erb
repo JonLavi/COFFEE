@@ -1,5 +1,7 @@
 <h1>Edit Producer Details: <%= @producer.name %></h1>
 
+<section class="details-box">
+<p>
 <form class="" action="/producers/<%= @producer.id %>" method="post">
 
   <label for="name"> Name: </label>
@@ -11,3 +13,5 @@
   <input class="btn btn--submit" type="submit" value="Confirm">
 
 </form>
+</p>
+</section>

@@ -1,0 +1,73 @@
+<h1>Products by: <%= @producer.name %></h1>
+
+<section class="details-box">
+  <p> <a href="products/new"> <i class="fas fa-coffee"></i> Add Product</a></p>
+</section>
+
+<section>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Producer</th>
+      <th>Units in Stock</th>
+      <th>Optimal Stock</th>
+      <th>Weight (g)</th>
+      <th>Unit Cost (£)</th>
+      <th>Sell Price (£)</th>
+      <th>Markup (£)</th>
+      <th>Markup (%)</th>
+      <th>Stock Buy Value (£)</th>
+      <th>Stock Sell Value (£)</th>
+      <th>Profit (£)</th>
+    </tr>
+    <% @products.each do |product| %>
+      <% if product.producer_id == @producer.id %>
+        <tr>
+          <td><%= product.id %></td>
+          <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
+          <td><a href="/producers/<%= product.producer_id %>"><%= product.producer %></a></td>
+
+          <!-- Conditional Rendering of Units in Stock -->
+            <% if product.in_stock? == false  %>
+              <td id="stock_empty">
+            <% elsif product.low_stock? == true %>
+              <td id="stock_low">
+            <% else %>
+              <td class="stock-details">
+            <% end %>
+          <!-- End Conditional Formatting -->
+            <!-- Start Form to edit Stock inside cell -->
+                <form class="" action="/products/<%= product.id %>/inline" method="post">
+                <label for="units-in-stock-inline"></label>
+                <input id="units-in-stock-inline" type="number" min="0" name="units_in_stock" value="<%=product.units_in_stock%>">
+                <!-- Hidden input to properly update Units in Stock -->
+                    <input id="name" type="hidden" name="name" value="<%=product.name%>">
+                    <input id="producer-id" type="hidden" name="producer_id" value="<%= product.producer_id  %>">
+                    <input id="origin" type="hidden" name="origin" value="<%=product.origin%>">
+                    <input id="roast" type="hidden" name="roast" value="<%=product.roast%>">
+                    <input id="blend" type="hidden" name="blend" value="<%=product.blend%>">
+                    <input id="type" type="hidden" name="type" value="<%=product.type%>">
+                    <input id="weight" type="hidden" name="weight" value="<%=product.weight%>">
+                    <input id="unit-cost" type="hidden" name="unit_cost" value="<%=product.unit_cost%>">
+                    <input id="sell-price" type="hidden" name="sell_price" value="<%=product.sell_price%>">
+                    <input id="optimal-stock" type="hidden" name="optimal_stock" value="<%=product.optimal_stock%>">
+                <!-- End Hidden input-->
+                <input class="btn btn--inline" type="submit" value="Update!">
+                </form>
+            <!-- End Form to edit Stock inside cell -->
+              </td>
+          <td><%= product.optimal_stock %></td>
+          <td><%= product.weight %></td>
+          <td><%= product.unit_cost %></td>
+          <td><%= product.sell_price %></td>
+          <td><%= product.markup %></td>
+          <td><%= product.markup_percentage%></td>
+          <td><%= product.stock_buy_value %></td>
+          <td><%= product.stock_sell_value %></td>
+          <td><%= product.profit%></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</section>

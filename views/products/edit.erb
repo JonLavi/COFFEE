@@ -1,46 +1,51 @@
 <h1>Edit Product: <%=@product.name%></h1>
 
-<form class="" action="/products/<%= @product.id %>" method="post">
 
-  <label for="name"> Name: </label>
-  <input id="name" type="text" name="name" value="<%=@product.name%>">
-  <br>
+<section class="details-box">
+  <p>
+    <form class="" action="/products/<%= @product.id %>" method="post">
 
-  <!-- Make the correct producer be pre-selected -->
-  <label for="producer_id"> Producer: </label>
-  <select name="producer_id" id="producer_select" selected="<%= @product.producer_id  %>">
-    <% @producers.each do |producer| %>
-        <option <%="selected" if @product.producer_id == producer.id%> value = '<%=producer.id%>'><%=producer.name%></option>
-    <% end %>
-  </select>
+      <label for="name"> Name: </label>
+      <input id="name" type="text" name="name" value="<%=@product.name%>">
+      <br>
 
-  <br>
-  <label for="origin"> Origin: </label>
-  <input id="origin" type="text" name="origin" value="<%=@product.origin%>">
-  <br>
-  <label for="roast"> Roast: </label>
-  <input id="roast" type="text" name="roast" value="<%=@product.roast%>">
-  <br>
-  <label for="blend"> Blend: </label>
-  <input id="blend" type="text" name="blend" value="<%=@product.blend%>">
-  <br>
-  <label for="type"> Type: </label>
-  <input id="type" type="text" name="type" value="<%=@product.type%>">
-  <br>
-  <label for="weight"> Weight: </label>
-  <input id="weight" type="number" min="0" name="weight" value="<%=@product.weight%>">
-  <br>
-  <label for="unit-cost"> Unit Cost: </label>
-  <input id="unit-cost" type="number" min="0" name="unit_cost" value="<%=@product.unit_cost%>">
-  <br>
-  <label for="sell-price">Sell Price:</label>
-  <input id="sell-price" type="number" min="0" name="sell_price" value="<%=@product.sell_price%>">
-  <br>
-  <label for="units-in-stock">Units in Stock:</label>
-  <input id="units-in-stock" type="number" min="0" name="units_in_stock" value="<%=@product.units_in_stock%>">
-  <br>
-  <label for="optimal-stock">Optimal Stock:</label>
-  <input id="optimal-stock" type="number" min="0" name="optimal_stock" value="<%=@product.optimal_stock%>">
-  <br>
-  <input class="btn btn--submit" type="submit" value="Confirm">
-</form>
+      <!-- Make the correct producer be pre-selected -->
+      <label for="producer_id"> Producer: </label>
+      <select name="producer_id" id="producer_select" selected="<%= @product.producer_id  %>">
+        <% @producers.each do |producer| %>
+            <option <%="selected" if @product.producer_id == producer.id%> value = '<%=producer.id%>'><%=producer.name%></option>
+        <% end %>
+      </select>
+
+      <br>
+      <label for="origin"> Origin: </label>
+      <input id="origin" type="text" name="origin" value="<%=@product.origin%>">
+      <br>
+      <label for="roast"> Roast: </label>
+      <input id="roast" type="text" name="roast" value="<%=@product.roast%>">
+      <br>
+      <label for="blend"> Blend: </label>
+      <input id="blend" type="text" name="blend" value="<%=@product.blend%>">
+      <br>
+      <label for="type"> Type: </label>
+      <input id="type" type="text" name="type" value="<%=@product.type%>">
+      <br>
+      <label for="weight"> Weight: </label>
+      <input id="weight" type="number" min="0" name="weight" value="<%=@product.weight%>">
+      <br>
+      <label for="unit-cost"> Unit Cost: </label>
+      <input id="unit-cost" type="number" min="0" name="unit_cost" value="<%=@product.unit_cost%>">
+      <br>
+      <label for="sell-price">Sell Price:</label>
+      <input id="sell-price" type="number" min="0" name="sell_price" value="<%=@product.sell_price%>">
+      <br>
+      <label for="units-in-stock">Units in Stock:</label>
+      <input id="units-in-stock" type="number" min="0" name="units_in_stock" value="<%=@product.units_in_stock%>">
+      <br>
+      <label for="optimal-stock">Optimal Stock:</label>
+      <input id="optimal-stock" type="number" min="0" name="optimal_stock" value="<%=@product.optimal_stock%>">
+      <br>
+      <input class="btn btn--submit" type="submit" value="Confirm">
+    </form>
+  </p>
+</section>

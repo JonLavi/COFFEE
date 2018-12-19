@@ -1,44 +1,49 @@
 <h1>Add New Product</h1>
 
-<form class="" action="/products" method="post">
-  <label for="name">Name:</label>
-  <input id="name" type="text" name="name" required="required" >
-  <br>
 
-  <label for="producer_select">Select Producer:</label>
-  <select name="producer_id" id="producer_select">
-    <% @producers.each do |producer| %>
-        <option value=<%= producer.id %>><%= producer.name %></option>
-    <% end %>
-  </select> <a href="producers/new">Add New Producer!</a>
-  <br>
+<section class="details-box">
+  <p>
+    <form class="" action="/products" method="post">
+      <label for="name">Name:</label>
+      <input id="name" type="text" name="name" required="required" >
+      <br>
 
-  <label for="origin">Origin:</label>
-  <input id="origin" type="text" name="origin" >
-  <br>
-  <label for="roast">Roast:</label>
-  <input id="roast" type="text" name="roast" >
-  <br>
-  <label for="blend">Blend:</label>
-  <input id="blend" type="text" name="blend" >
-  <br>
-  <label for="type">Type:</label>
-  <input id="type" type="text" name="type" >
-  <br>
-  <label for="weight">Weight:</label>
-  <input id="weight" type="number" min="0" name="weight" >
-  <br>
-  <label for="unit-cost">Unit Cost:</label>
-  <input id="unit-cost" type="number" min="0" name="unit_cost" required="required" >
-  <br>
-  <label for="sell-price">Sell Price:</label>
-  <input id="sell-price" type="number" min="0" name="sell_price" required="required" >
-  <br>
-  <label for="units-in-stock">Units in Stock:</label>
-  <input id="units-in-stock" type="number" min="0" name="units_in_stock" required="required">
-  <br>
-  <label for="optimal-stock">Optimal Stock:</label>
-  <input id="optimal-stock" type="number" min="0" name="optimal_stock" required="required">
-  <br>
-  <input class="btn btn--submit" type="submit" value="Create Product">
-</form>
+      <label for="producer_select">Select Producer:</label>
+      <select name="producer_id" id="producer_select">
+        <% @producers.each do |producer| %>
+            <option value=<%= producer.id %>><%= producer.name %></option>
+        <% end %>
+      </select> <a href="producers/new">Add New Producer!</a>
+      <br>
+
+      <label for="origin">Origin:</label>
+      <input id="origin" type="text" name="origin" >
+      <br>
+      <label for="roast">Roast:</label>
+      <input id="roast" type="text" name="roast" >
+      <br>
+      <label for="blend">Blend:</label>
+      <input id="blend" type="text" name="blend" >
+      <br>
+      <label for="type">Type:</label>
+      <input id="type" type="text" name="type" >
+      <br>
+      <label for="weight">Weight:</label>
+      <input id="weight" type="number" min="0" name="weight" >
+      <br>
+      <label for="unit-cost">Unit Cost:</label>
+      <input id="unit-cost" type="number" min="0" name="unit_cost" required="required" >
+      <br>
+      <label for="sell-price">Sell Price:</label>
+      <input id="sell-price" type="number" min="0" name="sell_price" required="required" >
+      <br>
+      <label for="units-in-stock">Units in Stock:</label>
+      <input id="units-in-stock" type="number" min="0" name="units_in_stock" required="required">
+      <br>
+      <label for="optimal-stock">Optimal Stock:</label>
+      <input id="optimal-stock" type="number" min="0" name="optimal_stock" required="required">
+      <br>
+      <input class="btn btn--submit" type="submit" value="Create Product">
+    </form>
+  </p>
+</section>

@@ -11,6 +11,13 @@ get '/products' do
   erb(:'products/index')
 end
 
+#Show all Products by producer
+get '/products/producer/:id' do
+  @producer = Producer.find(params['id'].to_i)
+  @products = Product.all
+  erb(:'products/filter')
+end
+
 #Create Product route
 get '/products/new' do
   @producers = Producer.all
