@@ -31,9 +31,16 @@ end
 
 #Edit Product details
 get '/products/:id/edit' do
+
   @product = Product.find(params['id'].to_i)
   @producers = Producer.all
   erb(:'products/edit')
+end
+
+post '/products/:id/inline' do
+  product = Product.new(params)
+  product.update
+  redirect to("/products")
 end
 
 post '/products/:id' do
