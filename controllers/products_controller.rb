@@ -31,7 +31,6 @@ end
 
 #Edit Product details
 get '/products/:id/edit' do
-
   @product = Product.find(params['id'].to_i)
   @producers = Producer.all
   erb(:'products/edit')
