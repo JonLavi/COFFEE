@@ -56,6 +56,26 @@ img {
 
 /* ------- Design add entry window ------- */
 
+input{
+  border: 2px solid var(--colour2);
+  border-radius: 10px;
+  padding: 3px 3px;
+}
+
+select {
+  width: 100px;
+  padding: 16px 20px;
+  border: 2px solid var(--colour2);
+  border-radius: 10px;
+  background-color: #f1f1f1;
+}
+
+
+#units-in-stock-inline{
+width: 50px;
+}
+
+
 .add-producer-window {
   position: fixed;
   top: 120px;
@@ -78,4 +98,5 @@ img {
   background-color: var(--colour4);
   border: 3px solid var(--colour5);
   border-radius: 15px 50px;
+  margin-bottom: 20px;
 }

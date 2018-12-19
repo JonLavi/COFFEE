@@ -38,8 +38,8 @@
       <!-- End Conditional Formatting -->
         <!-- Start Form to edit Stock inside cell -->
             <form class="" action="/products/<%= product.id %>/inline" method="post">
-            <label for="units-in-stock"></label>
-            <input id="units-in-stock" type="number" name="units_in_stock" value="<%=product.units_in_stock%>">
+            <label for="units-in-stock-inline"></label>
+            <input id="units-in-stock-inline" type="number" name="units_in_stock" value="<%=product.units_in_stock%>">
             <!-- Hidden input to properly update Units in Stock -->
                 <input id="name" type="hidden" name="name" value="<%=product.name%>">
                 <input id="producer-id" type="hidden" name="producer_id" value="<%= product.producer_id  %>">
@@ -52,7 +52,7 @@
                 <input id="sell-price" type="hidden" name="sell_price" value="<%=product.sell_price%>">
                 <input id="optimal-stock" type="hidden" name="optimal_stock" value="<%=product.optimal_stock%>">
             <!-- End Hidden input-->
-            <input class="btn btn--submit" type="submit" value="Confirm">
+            <input class="btn btn--inline" type="submit" value="Update!">
             </form>
         <!-- End Form to edit Stock inside cell -->
           </td>

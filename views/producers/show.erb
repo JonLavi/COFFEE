@@ -5,8 +5,6 @@
 <p>Id: <%= @producer.id %></p>
 <p>Name : <%= @producer.name %></p>
 <p>Address : <%= @producer.address %></p>
-<a href="/producers/<%=@producer.id%>/edit"><i class="fas fa-pencil-alt"></i>Edit</a>
-<a href="/producers/<%=@producer.id%>/delete"><i class="fas fa-trash-alt"></i>Delete</a>
 
 </section>
 
@@ -21,4 +19,10 @@
 </ul>
 
 
+</section>
+
+<section class="details-box">
+<h2>Actions:</h2>
+<p><a href="/producers/<%=@producer.id%>/edit"><i class="fas fa-pencil-alt"></i>Edit</a></p>
+<p><a href="/producers/<%=@producer.id%>/delete"><i class="fas fa-trash-alt"></i>Delete</a></p>
 </section>

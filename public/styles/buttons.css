@@ -19,3 +19,7 @@
 .btn:active{
   background-color: var(--colour2);
 }
+
+.btn--inline{
+  font-size: 10px;
+}
