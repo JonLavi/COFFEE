@@ -6,8 +6,8 @@ table, th, td {
   font-size: 16px;
 }
 
-td {
-    padding: 7px;
+td th{
+    padding: 15px;
 }
 
 table {
