@@ -28,19 +28,19 @@
   <input id="type" type="text" name="type" value="<%=@product.type%>">
   <br>
   <label for="weight"> Weight: </label>
-  <input id="weight" type="number" name="weight" value="<%=@product.weight%>">
+  <input id="weight" type="number" min="0" name="weight" value="<%=@product.weight%>">
   <br>
   <label for="unit-cost"> Unit Cost: </label>
-  <input id="unit-cost" type="number" name="unit_cost" value="<%=@product.unit_cost%>">
+  <input id="unit-cost" type="number" min="0" name="unit_cost" value="<%=@product.unit_cost%>">
   <br>
   <label for="sell-price">Sell Price:</label>
-  <input id="sell-price" type="number" name="sell_price" value="<%=@product.sell_price%>">
+  <input id="sell-price" type="number" min="0" name="sell_price" value="<%=@product.sell_price%>">
   <br>
   <label for="units-in-stock">Units in Stock:</label>
-  <input id="units-in-stock" type="number" name="units_in_stock" value="<%=@product.units_in_stock%>">
+  <input id="units-in-stock" type="number" min="0" name="units_in_stock" value="<%=@product.units_in_stock%>">
   <br>
   <label for="optimal-stock">Optimal Stock:</label>
-  <input id="optimal-stock" type="number" name="optimal_stock" value="<%=@product.optimal_stock%>">
+  <input id="optimal-stock" type="number" min="0" name="optimal_stock" value="<%=@product.optimal_stock%>">
   <br>
   <input class="btn btn--submit" type="submit" value="Confirm">
 </form>

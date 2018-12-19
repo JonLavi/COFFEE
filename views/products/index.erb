@@ -39,7 +39,7 @@
         <!-- Start Form to edit Stock inside cell -->
             <form class="" action="/products/<%= product.id %>/inline" method="post">
             <label for="units-in-stock-inline"></label>
-            <input id="units-in-stock-inline" type="number" name="units_in_stock" value="<%=product.units_in_stock%>">
+            <input id="units-in-stock-inline" type="number" min="0" name="units_in_stock" value="<%=product.units_in_stock%>">
             <!-- Hidden input to properly update Units in Stock -->
                 <input id="name" type="hidden" name="name" value="<%=product.name%>">
                 <input id="producer-id" type="hidden" name="producer_id" value="<%= product.producer_id  %>">

@@ -26,19 +26,19 @@
   <input id="type" type="text" name="type" >
   <br>
   <label for="weight">Weight:</label>
-  <input id="weight" type="number" name="weight" >
+  <input id="weight" type="number" min="0" name="weight" >
   <br>
   <label for="unit-cost">Unit Cost:</label>
-  <input id="unit-cost" type="number" name="unit_cost" required="required" >
+  <input id="unit-cost" type="number" min="0" name="unit_cost" required="required" >
   <br>
   <label for="sell-price">Sell Price:</label>
-  <input id="sell-price" type="number" name="sell_price" required="required" >
+  <input id="sell-price" type="number" min="0" name="sell_price" required="required" >
   <br>
   <label for="units-in-stock">Units in Stock:</label>
-  <input id="units-in-stock" type="number" name="units_in_stock" required="required">
+  <input id="units-in-stock" type="number" min="0" name="units_in_stock" required="required">
   <br>
   <label for="optimal-stock">Optimal Stock:</label>
-  <input id="optimal-stock" type="number" name="optimal_stock" required="required">
+  <input id="optimal-stock" type="number" min="0" name="optimal_stock" required="required">
   <br>
   <input class="btn btn--submit" type="submit" value="Create Product">
 </form>
