@@ -4,16 +4,16 @@ require_relative('producer')
 class Product
 
   attr_reader :id
-  attr_accessor :name, :producer_id, :origin, :roast, :blend, :type, :weight, :unit_cost, :sell_price, :units_in_stock, :optimal_stock
+  attr_accessor :name, :producer_id, :origin_id, :roast_id, :blend_id, :type_id, :weight, :unit_cost, :sell_price, :units_in_stock, :optimal_stock
 
   def initialize(options)
     @id = options['id'].to_i if options['id'] #integer
     @name = options['name'] #string
     @producer_id = options['producer_id'].to_i #integer
-    @origin = options['origin'] #string
-    @roast = options['roast'] #string
-    @blend = options['blend'] #string
-    @type = options['type'] #string
+    @origin_id = options['origin_id'] #string
+    @roast_id = options['roast_id'] #string
+    @blend_id = options['blend_id'] #string
+    @type_id = options['type_id'] #string
     @weight = options['weight'].to_i #integer
     @unit_cost = options['unit_cost'].to_i #integer
     @sell_price = options['sell_price'].to_i #integer
@@ -57,20 +57,20 @@ class Product
 
   def save()
     sql = "INSERT INTO products
-          (name, producer_id, origin, roast, blend, type, weight, unit_cost, sell_price, units_in_stock, optimal_stock)
+          (name, producer_id, origin_id, roast_id, blend_id, type_id, weight, unit_cost, sell_price, units_in_stock, optimal_stock)
           VALUES
           ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
           RETURNING id"
-    values = [@name, @producer_id, @origin, @roast, @blend, @type, @weight, @unit_cost, @sell_price, @units_in_stock, @optimal_stock]
+    values = [@name, @producer_id, @origin_id, @roast_id, @blend_id, @type_id, @weight, @unit_cost, @sell_price, @units_in_stock, @optimal_stock]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
   end
 
   def update()
     sql = "UPDATE products SET
-          (name, producer_id, origin, roast, blend, type, weight, unit_cost, sell_price, units_in_stock, optimal_stock) =
+          (name, producer_id, origin_id, roast_id, blend_id, type_id, weight, unit_cost, sell_price, units_in_stock, optimal_stock) =
           ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) WHERE id = $12"
-    values = [@name, @producer_id, @origin, @roast, @blend, @type, @weight, @unit_cost, @sell_price, @units_in_stock, @optimal_stock, @id]
+    values = [@name, @producer_id, @origin_id, @roast_id, @blend_id, @type_id, @weight, @unit_cost, @sell_price, @units_in_stock, @optimal_stock, @id]
     results = SqlRunner.run(sql, values)
   end
 
