@@ -25,6 +25,26 @@ class Product
     return Producer.find(@producer_id).name
   end
 
+  def blend
+    blend = Blend.find(@blend_id)
+    return blend
+  end
+
+  def origin
+    origin = Origin.find(@origin_id)
+    return origin
+  end
+
+  def roast
+    roast = Roast.find(@roast_id)
+    return roast
+  end
+
+  def type
+    type = Type.find(@type_id)
+    return type
+  end
+
   def markup()
     markup = @sell_price - @unit_cost
   end
