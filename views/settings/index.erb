@@ -1,0 +1,33 @@
+<h1>Settings Menu</h1>
+
+<label for="blend_select">Blends:</label>
+<select name="blend_id" id="blend_select">
+  <% @blends.each do |blend| %>
+      <option value=<%= blend.id %>><%= blend.name %></option>
+  <% end %>
+</select> <a href="blend/new">Add New Blend!</a>
+<br>
+
+<label for="origin_select">Origins:</label>
+<select name="origin_id" id="origin_select">
+  <% @origins.each do |origin| %>
+      <option value=<%= origin.id %>><%= origin.name %></option>
+  <% end %>
+</select> <a href="origin/new">Add New Origin!</a>
+<br>
+
+<label for="roast_select">Roasts:</label>
+<select name="roast_id" id="roast_select">
+  <% @roasts.each do |roast| %>
+      <option value=<%= roast.id %>><%= roast.name %></option>
+  <% end %>
+</select> <a href="roast/new">Add New Roast!</a>
+<br>
+
+<label for="type_select">Types:</label>
+<select name="type_id" id="type_select">
+  <% @types.each do |type| %>
+      <option value=<%= type.id %>><%= type.name %></option>
+  <% end %>
+</select> <a href="type/new">Add New Type!</a>
+<br>

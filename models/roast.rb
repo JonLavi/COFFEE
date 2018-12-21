@@ -32,7 +32,7 @@ class Roast
     sql = "SELECT * FROM roasts WHERE id = $1"
     values = [id.to_i]
     result = SqlRunner.run(sql, values)
-    return Roasts.new(result[0])
+    return Roast.new(result[0])
   end
 
   def self.delete_by_id(id)
@@ -44,7 +44,7 @@ class Roast
   def self.all()
     sql = "SELECT * FROM roasts"
     results = SqlRunner.run(sql)
-    return results.map{|hash| Roasts.new(hash)}
+    return results.map{|hash| Roast.new(hash)}
   end
 
   def self.delete_all()

@@ -10,10 +10,10 @@ class Product
     @id = options['id'].to_i if options['id'] #integer
     @name = options['name'] #string
     @producer_id = options['producer_id'].to_i #integer
-    @origin_id = options['origin_id'] #string
-    @roast_id = options['roast_id'] #string
-    @blend_id = options['blend_id'] #string
-    @type_id = options['type_id'] #string
+    @origin_id = options['origin_id'] #integer
+    @roast_id = options['roast_id'] #integer
+    @blend_id = options['blend_id'] #integer
+    @type_id = options['type_id'] #integer
     @weight = options['weight'].to_i #integer
     @unit_cost = options['unit_cost'].to_i #integer
     @sell_price = options['sell_price'].to_i #integer
