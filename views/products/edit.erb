@@ -4,61 +4,85 @@
 <section class="details-box">
   <form class="" action="/products/<%= @product.id %>" method="post">
 
-    <p><label for="name"> Name: </label>
+    <p>
+      <label for="name"> Name: </label>
       <input id="name" type="text" name="name" value="<%=@product.name%>">
     </p>
 
-    <!-- Make the correct producer be pre-selected -->
-    <p><label for="producer_id"> Producer: </label>
+    <!-- Make the correct producer/origin/roast/blend/type be pre-selected -->
+    <p>
+      <label for="producer_id"> Producer: </label>
       <select name="producer_id" id="producer_select" selected="<%= @product.producer_id  %>">
         <% @producers.each do |producer| %>
         <option <%="selected" if @product.producer_id == producer.id%> value = '<%=producer.id%>'><%=producer.name%></option>
         <% end %>
       </select>
     </p>
-    <p><label for="origin_id"> Origin: </label>
+
+    <p>
+      <label for="origin_id"> Origin: </label>
       <select name="origin_id" id="origin_select" selected="<%= @product.origin_id  %>">
         <% @origins.each do |origin| %>
         <option <%="selected" if @product.origin_id == origin.id%> value = '<%=origin.id%>'><%=origin.name%></option>
         <% end %>
       </select>
     </p>
-    <p><label for="roast_id"> Roast: </label>
+
+    <p>
+      <label for="roast_id"> Roast: </label>
       <select name="roast_id" id="roast_select" selected="<%= @product.roast_id  %>">
         <% @roasts.each do |roast| %>
         <option <%="selected" if @product.roast_id == roast.id%> value = '<%=roast.id%>'><%=roast.name%></option>
         <% end %>
       </select>
     </p>
-    <p><label for="blend_id"> Blend: </label>
+
+    <p>
+      <label for="blend_id"> Blend: </label>
       <select name="blend_id" id="blend_select" selected="<%= @product.blend_id  %>">
         <% @blends.each do |blend| %>
         <option <%="selected" if @product.blend_id == blend.id%> value = '<%=blend.id%>'><%=blend.name%></option>
         <% end %>
       </select>
     </p>
-    <p><label for="type_id"> Type: </label>
+
+    <p>
+      <label for="type_id"> Type: </label>
       <select name="type_id" id="type_select" selected="<%= @product.type_id  %>">
         <% @types.each do |type| %>
         <option <%="selected" if @product.type_id == type.id%> value = '<%=type.id%>'><%=type.name%></option>
         <% end %>
       </select>
     </p>
-    <p><label for="weight"> Weight (g): </label>
+
+    <p>
+      <label for="weight"> Weight (g): </label>
       <input id="weight" type="number" min="0" name="weight" value="<%=@product.weight%>">
     </p>
-    <p><label for="unit-cost"> Unit Cost: £ </label>
+
+    <p>
+      <label for="unit-cost"> Unit Cost: £ </label>
       <input id="unit-cost" type="number" min="0" name="unit_cost" value="<%=@product.unit_cost%>">
     </p>
-    <p><label for="sell-price">Sell Price: £ </label>
+
+    <p>
+      <label for="sell-price">Sell Price: £ </label>
       <input id="sell-price"  type="number" min="0" name="sell_price" value="<%=@product.sell_price%>">
     </p>
-    <p><label for="units-in-stock">Units in Stock: </label>
+
+    <p>
+      <label for="units-in-stock">Units in Stock: </label>
       <input id="units-in-stock" type="number" min="0" name="units_in_stock" value="<%=@product.units_in_stock%>">
     </p>
-    <p><label for="optimal-stock">Optimal Stock:</label>
+
+    <p>
+      <label for="optimal-stock">Optimal Stock:</label>
       <input id="optimal-stock" type="number" min="0" name="optimal_stock" value="<%=@product.optimal_stock%>">
     </p>
-    <p><input class="btn btn--submit" type="submit" value="Confirm"></p>
+
+    <p>
+      <input class="btn btn--submit" type="submit" value="Confirm">
+    </p>
+
   </form>
 </section>

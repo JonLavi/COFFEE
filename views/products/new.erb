@@ -11,23 +11,47 @@
       <label for="producer_select">Select Producer:</label>
       <select name="producer_id" id="producer_select">
         <% @producers.each do |producer| %>
-            <option value=<%= producer.id %>><%= producer.name %></option>
+        <option value=<%= producer.id %>><%= producer.name %></option>
         <% end %>
       </select> <a href="producers/new">Add New Producer!</a>
       <br>
 
-      <label for="origin">Origin:</label>
-      <input id="origin" type="text" name="origin" >
-      <br>
-      <label for="roast">Roast:</label>
-      <input id="roast" type="text" name="roast" >
-      <br>
-      <label for="blend">Blend:</label>
-      <input id="blend" type="text" name="blend" >
-      <br>
-      <label for="type">Type:</label>
-      <input id="type" type="text" name="type" >
-      <br>
+      <p>
+        <label for="origin_id"> Origin: </label>
+        <select name="origin_id" id="origin_select">
+          <% @origins.each do |origin| %>
+          <option value = '<%=origin.id%>'><%=origin.name%></option>
+          <% end %>
+        </select>
+      </p>
+
+      <p>
+        <label for="roast_id"> Roast: </label>
+        <select name="roast_id" id="roast_select">
+          <% @roasts.each do |roast| %>
+          <option value = '<%=roast.id%>'><%=roast.name%></option>
+          <% end %>
+        </select>
+      </p>
+
+      <p>
+        <label for="blend_id"> Blend: </label>
+        <select name="blend_id" id="blend_select">
+          <% @blends.each do |blend| %>
+          <option value = '<%=blend.id%>'><%=blend.name%></option>
+          <% end %>
+        </select>
+      </p>
+
+      <p>
+        <label for="type_id"> Type: </label>
+        <select name="type_id" id="type_select">
+          <% @types.each do |type| %>
+          <option value = '<%=type.id%>'><%=type.name%></option>
+          <% end %>
+        </select>
+      </p>
+
       <label for="weight">Weight (g):</label>
       <input id="weight" type="number" min="0" name="weight" >
       <br>
