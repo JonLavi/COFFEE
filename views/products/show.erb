@@ -11,13 +11,13 @@ Name: <%= @product.name %>
 <br>
 Producer: <a href="/producers/<%= @product.producer_id %>"><%= @product.producer %></a>
 <br>
-Origin: <%= @product.origin %>
+Origin: <%= @product.origin.name %>
 <br>
-Roast: <%= @product.roast %>
+Roast: <%= @product.roast.name %>
 <br>
-Blend: <%= @product.blend %>
+Blend: <%= @product.blend.name %>
 <br>
-Type: <%= @product.type %>
+Type: <%= @product.type.name %>
 <br>
 Weight: <%= @product.weight %>
 <br>

@@ -21,6 +21,10 @@ end
 #Create Product route
 get '/products/new' do
   @producers = Producer.all
+  @origins = Origin.all
+  @blends = Blend.all
+  @roasts = Roast.all
+  @types = Type.all
   erb(:'products/new')
 end
 
@@ -40,6 +44,10 @@ end
 get '/products/:id/edit' do
   @product = Product.find(params['id'].to_i)
   @producers = Producer.all
+  @origins = Origin.all
+  @blends = Blend.all
+  @roasts = Roast.all
+  @types = Type.all
   erb(:'products/edit')
 end
 
