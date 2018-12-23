@@ -67,6 +67,8 @@ product2 = Product.new({'name' => 'Kickass Kenyan',
            })
 product2.save()
 
+
+
 ##### Tested Methods: #####
 # product1.name = "ColomboCoffee"
 # product1.blend = "Robusta"
@@ -82,6 +84,11 @@ product2.save()
 # Producer.find(22)
 # Product.find(22)
 # StockItem.find(7)
+
+# list_of_products =[product1, product2]
+# Product.total_stock_buy_value(list_of_products)
+# Product.total_stock_sell_value(list_of_products)
+# Product.total_stock_profit(list_of_products)
 
 binding.pry
 nil

@@ -73,6 +73,23 @@ class Product
     @units_in_stock < @optimal_stock/5 ? true : false
   end
 
+  def self.total_stock_buy_value(list_of_products)
+    total = 0
+    list_of_products.each {|product| total += (product.units_in_stock * product.unit_cost)}
+    return total
+  end
+
+  def self.total_stock_sell_value(list_of_products)
+    total = 0
+    list_of_products.each {|product| total += (product.units_in_stock * product.sell_price)}
+    return total
+  end
+
+  def self.total_stock_profit(list_of_products)
+    profit = total_stock_sell_value(list_of_products) - total_stock_buy_value(list_of_products)
+    return profit
+  end
+
 #### SQL CRUD Actions ####
 
   def save()
