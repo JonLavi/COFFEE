@@ -18,7 +18,15 @@
     </tr>
     <% end %>
   </table>
-    <a href="blend/new">Add New Blend!</a>
+
+  <section>
+    <h1> Create New Blend</h1>
+    <form class="" action="/settings/blend" method="post">
+      <input id="blend_name" type="text" name="blend_name" required="required" placeholder="Blend Name.." >
+      <input class="btn btn--submit" type="submit" name="" value="Create Blend!">
+    </form>
+  </section>
+
 
   <h2>Your Origins:</h2>
   <table>
@@ -37,7 +45,15 @@
     </tr>
     <% end %>
   </table>
-    <a href="origin/new">Add New origin!</a>
+
+  <section>
+    <h1> Create New Origin</h1>
+    <form class="" action="/settings/origin" method="post">
+      <input id="origin_name" type="text" name="origin_name" required="required" placeholder="Origin Name.." >
+      <input class="btn btn--submit" type="submit" name="" value="Create Origin!">
+    </form>
+  </section>
+
 
   <h2>Your Roasts:</h2>
   <table>
@@ -56,7 +72,15 @@
     </tr>
     <% end %>
   </table>
-    <a href="origin/new">Add New roast!</a>
+
+  <section>
+    <h1> Create New Roast</h1>
+    <form class="" action="/settings/roast" method="post">
+      <input id="roast_name" type="text" name="roast_name" required="required" placeholder="Roast Name.." >
+      <input class="btn btn--submit" type="submit" name="" value="Create Roast!">
+    </form>
+  </section>
+
 
   <h2>Your types:</h2>
   <table>
@@ -75,47 +99,13 @@
     </tr>
     <% end %>
   </table>
-    <a href="origin/new">Add New type!</a>
+
+  <section>
+    <h1> Create New Type</h1>
+    <form class="" action="/settings/type" method="post">
+      <input id="type_name" type="text" name="type_name" required="required" placeholder="Type Name.." >
+      <input class="btn btn--submit" type="submit" name="" value="Create Type!">
+    </form>
+  </section>
+
 </section>
-
-
-
-
-
-
-
-
-
-
-
-  <label for="blend_select">Blends:</label>
-  <select name="blend_id" id="blend_select">
-    <% @blends.each do |blend| %>
-        <option value=<%= blend.id %>><%= blend.name %></option>
-    <% end %>
-  </select> <a href="blend/new">Add New Blend!</a>
-  <br>
-
-  <label for="origin_select">Origins:</label>
-  <select name="origin_id" id="origin_select">
-    <% @origins.each do |origin| %>
-        <option value=<%= origin.id %>><%= origin.name %></option>
-    <% end %>
-  </select> <a href="origin/new">Add New Origin!</a>
-  <br>
-
-  <label for="roast_select">Roasts:</label>
-  <select name="roast_id" id="roast_select">
-    <% @roasts.each do |roast| %>
-        <option value=<%= roast.id %>><%= roast.name %></option>
-    <% end %>
-  </select> <a href="roast/new">Add New Roast!</a>
-  <br>
-
-  <label for="type_select">Types:</label>
-  <select name="type_id" id="type_select">
-    <% @types.each do |type| %>
-        <option value=<%= type.id %>><%= type.name %></option>
-    <% end %>
-  </select> <a href="type/new">Add New Type!</a>
-  <br>

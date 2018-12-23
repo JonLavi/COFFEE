@@ -2,55 +2,87 @@
 
 <section class="details-box">
 
-<h2>Coffee Details</h2>
+  <h2>Coffee Details</h2>
 
-<p>
-Id: <%= @product.id %>
-<br>
-Name: <%= @product.name %>
-<br>
-Producer: <a href="/producers/<%= @product.producer_id %>"><%= @product.producer %></a>
-<br>
-Origin: <%= @product.origin.name %>
-<br>
-Roast: <%= @product.roast.name %>
-<br>
-Blend: <%= @product.blend.name %>
-<br>
-Type: <%= @product.type.name %>
-<br>
-Weight: <%= @product.weight %>
-<br>
+  <p>
+    Id: <%= @product.id %>
+  </p>
+
+  <p>
+    Name: <%= @product.name %>
+  </p>
+
+  <p>
+    Producer: <a href="/producers/<%= @product.producer_id %>"><%= @product.producer %></a>
+  </p>
+
+  <p>
+    Origin: <%= @product.origin.name %>
+  </p>
+
+  <p>
+    Roast: <%= @product.roast.name %>
+  </p>
+
+  <p>
+    Blend: <%= @product.blend.name %>
+  </p>
+
+  <p>
+    Type: <%= @product.type.name %>
+  </p>
+
+  <p>
+    Weight: <%= @product.weight %>
+  </p>
+
 </section>
 
 
 <section class="details-box">
 
-<h2>Pricing/Stock Details</h2>
+  <h2>Pricing/Stock Details</h2>
 
-Unit Cost: <%= @product.unit_cost %>
-<br>
-Sell Price: <%= @product.sell_price %>
-<br>
-Markup: <%= @product.markup %>
-<br>
-Markup Percentage: <%= @product.markup_percentage %>
-<br>
-Units in Stock: <%= @product.units_in_stock %>
-<br>
-Optimal Stock: <%= @product.optimal_stock %>
-<br>
-Stock Buy Value: <%= @product.stock_buy_value %>
-<br>
-Stock Sell Value: <%= @product.stock_sell_value %>
-<br>
-Profit: <%= @product.profit%>
-</p>
+  <p>
+    Unit Cost: £ <%= @product.unit_cost %>
+  </p>
+
+  <p>
+    Sell Price: £ <%= @product.sell_price %>
+  </p>
+
+  <p>
+    Markup: £ <%= @product.markup %>
+  </p>
+
+  <p>
+    Markup (%): <%= @product.markup_percentage %>
+  </p>
+
+  <p>
+    Units in Stock: <%= @product.units_in_stock %>
+  </p>
+
+  <p>
+    Optimal Stock: <%= @product.optimal_stock %>
+  </p>
+
+  <p>
+    Stock Buy Value: £ <%= @product.stock_buy_value %>
+  </p>
+
+  <p>
+    Stock Sell Value: £ <%= @product.stock_sell_value %>
+  </p>
+
+  <p>
+    Profit: £ <%= @product.profit%>
+  </p>
 </section>
 
 
 <section class="details-box">
-<h2>Actions:</h2>
-<p><a href="/products/<%= @product.id %>/edit"><i class="fas fa-pencil-alt"></i>Edit</a><p>
-<p><a href="/products/<%= @product.id %>/delete"><i class="fas fa-trash-alt"></i>Delete</a><p>
+  <h2>Actions:</h2>
+  <p><a href="/products/<%= @product.id %>/edit"><i class="fas fa-pencil-alt"></i>Edit</a><p>
+  <p><a href="/products/<%= @product.id %>/delete"><i class="fas fa-trash-alt"></i>Delete</a><p>
 </section>

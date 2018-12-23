@@ -16,3 +16,27 @@ get '/settings' do
   @types = Type.all()
   erb(:'settings/index')
 end
+
+post '/settings/blend' do
+  blend = Blend.new(params)
+  blend.save()
+  redirect to("/settings")
+end
+
+post '/settings/origin' do
+  origin = Blend.new(params)
+  origin.save()
+  redirect to("/settings")
+end
+
+post '/settings/roast' do
+  roast = Blend.new(params)
+  roast.save()
+  redirect to("/settings")
+end
+
+post '/settings/type' do
+  type = Blend.new(params)
+  type.save()
+  redirect to("/settings")
+end
