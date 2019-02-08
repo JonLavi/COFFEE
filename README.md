@@ -13,10 +13,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 To run coffee, you will require to have the following installed on your machine: Ruby, PostgreSQL, and Sinatra
 
-```
-Ruby
-PostgreSQL
-```
 Install Sinatra and the PG gem to allow Ruby to access PostgreSQL
 ```
 gem install sinatra
