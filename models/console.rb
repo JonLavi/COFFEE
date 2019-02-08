@@ -1,4 +1,4 @@
-require('pry')
+# require('pry')
 require_relative('producer')
 require_relative('product')
 require_relative('blend')
@@ -90,5 +90,5 @@ product2.save()
 # Product.total_stock_sell_value(list_of_products)
 # Product.total_stock_profit(list_of_products)
 
-binding.pry
-nil
+# binding.pry
+# nil

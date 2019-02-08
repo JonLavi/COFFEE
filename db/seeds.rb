@@ -4,7 +4,7 @@ require_relative('../models/blend')
 require_relative('../models/origin')
 require_relative('../models/roast')
 require_relative('../models/type')
-require('pry')
+# require('pry')
 
 Product.delete_all()
 Producer.delete_all()

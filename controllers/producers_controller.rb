@@ -2,7 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all') if development?
 require_relative('../models/producer')
 require_relative('../models/product')
-require('pry')
+# require('pry')
 also_reload('./models/*')
 
 

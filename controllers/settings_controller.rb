@@ -24,19 +24,19 @@ post '/settings/blend' do
 end
 
 post '/settings/origin' do
-  origin = Blend.new(params)
+  origin = Origin.new(params)
   origin.save()
   redirect to("/settings")
 end
 
 post '/settings/roast' do
-  roast = Blend.new(params)
+  roast = Roast.new(params)
   roast.save()
   redirect to("/settings")
 end
 
 post '/settings/type' do
-  type = Blend.new(params)
+  type = Type.new(params)
   type.save()
   redirect to("/settings")
 end
