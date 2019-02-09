@@ -2,9 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all') if development?
 require_relative('../models/producer')
 require_relative('../models/product')
-# require('pry')
 also_reload('./models/*')
-
 
 #Show all Producers
 get '/producers' do
@@ -43,7 +41,6 @@ post '/producers/:id' do
 end
 
 #Delete Producer route
-
 get '/producers/:id/delete' do
   Producer.delete_by_id(params['id'].to_i)
   redirect to("/producers")

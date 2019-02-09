@@ -7,7 +7,6 @@ require_relative('../models/origin')
 require_relative('../models/roast')
 require_relative('../models/type')
 also_reload('./models/*')
-# require('pry')
 
 get '/settings' do
   @blends = Blend.all()

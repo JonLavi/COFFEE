@@ -1,6 +1,5 @@
 require_relative('product')
 require_relative('../db/sql_runner')
-# require('pry')
 
 class Producer
 

@@ -1,4 +1,4 @@
-# require('pry')
+require('pry')
 require_relative('producer')
 require_relative('product')
 require_relative('blend')

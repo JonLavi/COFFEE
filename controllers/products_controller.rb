@@ -4,7 +4,6 @@ require_relative('../models/producer')
 require_relative('../models/product')
 also_reload('./models/*')
 
-
 #Show all Products
 get '/products' do
   @products = Product.all
@@ -64,7 +63,6 @@ post '/products/:id' do
 end
 
 #Delete Product route
-
 get '/products/:id/delete' do
   Product.delete_by_id(params['id'].to_i)
   redirect to("/products")

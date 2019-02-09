@@ -51,5 +51,5 @@ class Origin
     sql = "DELETE FROM origins"
     SqlRunner.run(sql)
   end
-  
+
 end
