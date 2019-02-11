@@ -25,7 +25,7 @@ gem install minitest
 
 ### Installing
 
-Once you have all the prerequesits installed:
+Once you have all the prerequisites installed:
 
 Create and seed a database
 
