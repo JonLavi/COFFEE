@@ -1,0 +1,2 @@
+require "./coffee"
+run App
