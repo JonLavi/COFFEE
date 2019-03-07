@@ -1,1 +1,1 @@
-web: bundle exec coffee -C config/coffee.rb
+web: bundle exec puma -C config/puma.rb
